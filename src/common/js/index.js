@@ -2,7 +2,8 @@
  * pwix:admin-first/src/common/js/index.js
  */
 
-import './pck-tempkate.js';
+import './admin-first.js';
 //
 import './constants.js';
-import './defaults.js';
+//
+import './configure.js';
