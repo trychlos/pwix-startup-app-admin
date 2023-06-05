@@ -1,11 +1,5 @@
 # package-template
 
-Changes:
-- package-template  labels
-- pck-template      basename
-- pckTemplate       labels
-- PCK_              labels
-
 ## What is it ?
 
 A Meteor package template.

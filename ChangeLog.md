@@ -2,9 +2,11 @@
 
 ## ChangeLog
 
-| Version | Release    | Content |
-| ---:    | :---       | :---    |
-| xxx   |  | xxx | Initial release |
+### 1.0.0
+
+Release date: xxxxx
+
+- Initial release
 
 ---
 P. Wieser
