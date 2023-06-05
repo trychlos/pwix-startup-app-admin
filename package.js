@@ -14,6 +14,7 @@ Package.onUse( function( api ){
     configure( api );
     api.export([
         'AdminFirst',
+        'AF_APP_ADMIN_ROLE',
         'AF_VERBOSE_NONE',
         'AF_VERBOSE_CONFIGURE'
     ]);
@@ -30,6 +31,7 @@ Package.onTest( function( api ){
 
 function configure( api ){
     api.versionsFrom( '2.12' );
+    api.use( 'alanning:roles@3.4.0' );
     api.use( 'ecmascript' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
 }

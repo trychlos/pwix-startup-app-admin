@@ -5,6 +5,7 @@
 import merge from 'merge';
 
 AdminFirst._defaults = {
+    adminRole: AF_APP_ADMIN_ROLE,
     verbosity: AF_VERBOSE_NONE
 };
 

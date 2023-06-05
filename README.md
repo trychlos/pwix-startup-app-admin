@@ -2,13 +2,19 @@
 
 ## What is it ?
 
-A Meteor package template.
+A Meteor package template which, once added to the application, let it start by creating a global Application Administrator account.
 
 ## Configuration
 
 The package's behavior can be configured through a call to the `AdminFirst.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
 
 Known configuration options are:
+
+- `adminRole`
+
+    Define the name of the role of the application adminitrator.
+
+    Defaults to `AF_APP_ADMIN_ROLE` constant.
 
 - `verbosity`
 
@@ -27,6 +33,18 @@ Known configuration options are:
 Please note that `AdminFirst.configure()` method should be called in the same terms both in client and server sides.
 
 Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `AdminFirst.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+
+## `AdminFirst`
+
+The globally exported object.
+
+### Constants
+
+- `AF_APP_ADMIN_ROLE`
+
+    The name of the application admin role.
+
+    Value is 'APP_ADMIN'.
 
 ## NPM peer dependencies
 
