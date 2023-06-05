@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse( function( api ){
     configure( api );
     api.export([
-        'pckTemplate',
+        'AdminFirst',
         'PCK_VERBOSE_NONE',
         'PCK_VERBOSE_CONFIGURE'
     ]);

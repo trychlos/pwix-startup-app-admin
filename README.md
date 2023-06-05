@@ -6,7 +6,7 @@ A Meteor package template.
 
 ## Configuration
 
-The package's behavior can be configured through a call to the `pckTemplate.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
+The package's behavior can be configured through a call to the `AdminFirst.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
 
 Known configuration options are:
 
@@ -22,11 +22,11 @@ Known configuration options are:
 
     - `PCK_VERBOSE_CONFIGURE`
 
-        Trace `pckTemplate.configure()` calls and their result
+        Trace `AdminFirst.configure()` calls and their result
 
-Please note that `pckTemplate.configure()` method should be called in the same terms both in client and server sides.
+Please note that `AdminFirst.configure()` method should be called in the same terms both in client and server sides.
 
-Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `pckTemplate.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `AdminFirst.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
 
 ## NPM peer dependencies
 

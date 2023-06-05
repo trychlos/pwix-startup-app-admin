@@ -10,7 +10,6 @@
 
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
-|    3 | 2023- 6- 5 | Change pckTemplate to exportedObject |
 |    4 | 2023- 6- 5 | Change PCK_ to PREFIX_ |
 |    5 |  |  |
 
@@ -22,7 +21,8 @@
 |    1 | 2023- 6- 5 | Change package-template to package-name |
 |      | 2023- 6- 5 | done: admin-first |
 |    2 | 2023- 6- 5 | Change pck-template to exported-object + git mv src/common/js/pck-template.js src/common/js/exported-object.js |
-|      | 2023- 6- 5 | done: admin-first |
+|    3 | 2023- 6- 5 | Change pckTemplate to exportedObject |
+|      | 2023- 6- 5 | done: AdminFirst |
 
 ---
 P. Wieser
