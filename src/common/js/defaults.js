@@ -1,5 +1,5 @@
 /*
- * pwix:package-template/src/common/js/defaults.js
+ * pwix:admin-first/src/common/js/defaults.js
  */
 
 pckTemplate._defaults = {

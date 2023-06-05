@@ -1,4 +1,4 @@
-# package-template
+# admin-first
 
 ## ChangeLog
 
