@@ -3,5 +3,5 @@
  */
 
 AdminFirst._defaults = {
-    verbosity: PCK_VERBOSE_NONE
+    verbosity: AF_VERBOSE_NONE
 };

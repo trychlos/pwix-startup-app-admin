@@ -14,8 +14,8 @@ Package.onUse( function( api ){
     configure( api );
     api.export([
         'AdminFirst',
-        'PCK_VERBOSE_NONE',
-        'PCK_VERBOSE_CONFIGURE'
+        'AF_VERBOSE_NONE',
+        'AF_VERBOSE_CONFIGURE'
     ]);
     api.mainModule( 'src/client/js/index.js', 'client' );
     api.mainModule( 'src/server/js/index.js', 'server' );
