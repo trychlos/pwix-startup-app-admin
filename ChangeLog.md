@@ -1,4 +1,4 @@
-# admin-first
+# pwix:admin-first
 
 ## ChangeLog
 

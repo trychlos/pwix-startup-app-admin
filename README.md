@@ -1,4 +1,4 @@
-# admin-first
+# pwix:admin-first
 
 ## What is it ?
 
