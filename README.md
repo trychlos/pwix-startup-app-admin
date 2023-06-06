@@ -38,6 +38,53 @@ Remind too that Meteor packages are instanciated at application level. They are 
 
 The globally exported object.
 
+### Methods
+
+ - `AdminFirst.countAdmins( o )`
+
+    Client only.
+
+    Compute the count of users which have the `adminRole` role.
+
+    This method has to request the server, and thus provides an asynchronous result.
+    
+    It thus must be provided an argument object, with a ReactiveVar as a `result` key. This ReactiveVar will be set to the integer result of the method call.
+
+    Example:
+
+    - in `template.html`
+
+        ```
+            {{ displayAdminsCount }}
+        ```
+
+    - in `template.js`
+
+        ```
+            import { ReactiveVar } from 'meteor/reactive-var';
+
+            Template.template.onCreated( function(){
+                this.result = new ReactiveVar();
+                AdminFirst.countAdmins({ result: this.result });
+            });
+
+            Template.template.helpers({
+                displayAdminsCount(){
+                    return Template.instance().result.get();
+                }
+            });
+        ```
+
+### Blaze components
+
+- `afCreate`
+
+    Let the user enter his credentials for the first time.
+
+    All passed-in arguments will be directly passed to `acUserLogin` underlying component. Additional arguments are taken here:
+
+    - 
+
 ### Constants
 
 - `AF_APP_ADMIN_ROLE`
@@ -67,9 +114,7 @@ New and updated translations are willingly accepted, and more than welcome. Just
 
 ## Cookies and comparable technologies
 
-`pwix:admin-first` may use `localStorage` to record ...
-
-Because this is dynamically done on a per dialog basis, and only on the caller request, the package doesn't advertize of this use, relying on the caller own declaration.
+`pwix:admin-first` doesn't user any cookie or comparable technology.
 
 ---
 P. Wieser

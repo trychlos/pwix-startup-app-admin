@@ -32,8 +32,12 @@ Package.onTest( function( api ){
 function configure( api ){
     api.versionsFrom( '2.12' );
     api.use( 'alanning:roles@3.4.0' );
+    api.use( 'blaze-html-templates@2.0.0', 'client' );
     api.use( 'ecmascript' );
+    api.use( 'pwix:accounts' );
+    api.use( 'pwix:roles' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
+    api.addFiles( 'src/client/components/afCreate/afCreate.js', 'client' );
 }
 
 // NPM dependencies are checked in /src/server/js/check_npms.js
