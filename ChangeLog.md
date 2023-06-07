@@ -1,4 +1,4 @@
-# pwix:admin-first
+# pwix:startup-app-admin
 
 ## ChangeLog
 

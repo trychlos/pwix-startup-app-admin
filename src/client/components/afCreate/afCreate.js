@@ -1,5 +1,5 @@
 /*
- * pwix:admin-first/src/client/components/afCreate/afCreate.js
+ * pwix:startup-app-admin/src/client/components/afCreate/afCreate.js
  */
 
 import { pwixI18n } from 'meteor/pwix:i18n';
@@ -9,34 +9,12 @@ import 'meteor/pwix:accounts';
 
 import './afCreate.html';
 
-Template.afCreate.onCreated( function(){
-    const self = this;
-
-    self.AF = {
-        textOne: new ReactiveVar( null ),
-        textTwo: new ReactiveVar( null ),
-        textThree: new ReactiveVar( null ),
-        textFour: new ReactiveVar( null )
-    };
-
-    self.autorun(() => {
-        console.debug( pwixI18n.language());
-        self.AF.textOne.set( pwixI18n.label( I18N, 'signup.text_one' ));
-        self.AF.textTwo.set( pwixI18n.label( I18N, 'signup.text_two' ));
-        self.AF.textThree.set( pwixI18n.label( I18N, 'signup.text_three' ));
+Template.afCreate.helpers({
+    args(){
         let text = pwixI18n.label( I18N, 'signup.text_four' );
-        if( AdminFirst._conf.requireVerifiedEmail ){
+        if( pwixSAA._conf.requireVerifiedEmail ){
             text += pwixI18n.label( I18N, 'signup.text_verified' );
         }
-        self.AF.textFour.set( text );
-    });
-});
-
-Template.afCreate.helpers({
-
-    args(){
-        const AF = Template.instance().AF;
-        console.debug( 'in args' );
         return {
             ... Template.currentData(),
             ... {
@@ -47,10 +25,10 @@ Template.afCreate.helpers({
                 signinLink: false,
                 resetLink: false,
                 signupPasswordTwice: true,
-                signupTextOne: AF.textOne.get(),
-                signupTextTwo: AF.textTwo.get(),
-                signupTextThree: AF.textThree.get(),
-                signupTextFour: AF.textFour.get(),
+                signupTextOne: pwixI18n.label( I18N, 'signup.text_one' ),
+                signupTextTwo: pwixI18n.label( I18N, 'signup.text_two' ),
+                signupTextThree: pwixI18n.label( I18N, 'signup.text_three' ),
+                signupTextFour: text,
                 initialPanel: AC_PANEL_SIGNUP
             }
         };

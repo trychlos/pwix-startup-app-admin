@@ -1,5 +1,5 @@
 /*
- * pwix:admin-first/src/common/js/admin-first.js
+ * pwix:startup-app-admin/src/common/js/startup-app-admin.js
  */
 
-AdminFirst = {};
+pwixSAA = {};

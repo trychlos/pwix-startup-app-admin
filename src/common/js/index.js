@@ -1,8 +1,8 @@
 /*
- * pwix:admin-first/src/common/js/index.js
+ * pwix:startup-app-admin/src/common/js/index.js
  */
 
-import './admin-first.js';
+import './startup-app-admin.js';
 //
 import './constants.js';
 //

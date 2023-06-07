@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'pwix:admin-first',
+    name: 'pwix:startup-app-admin',
     version: '0.0.1',
     // Brief, one-line summary of the package.
     summary: '',
@@ -13,10 +13,10 @@ Package.describe({
 Package.onUse( function( api ){
     configure( api );
     api.export([
-        'AdminFirst',
-        'AF_APP_ADMIN_ROLE',
-        'AF_VERBOSE_NONE',
-        'AF_VERBOSE_CONFIGURE'
+        'pwixSAA',
+        'SAA_APP_ADMIN_ROLE',
+        'SAA_VERBOSE_NONE',
+        'SAA_VERBOSE_CONFIGURE'
     ]);
     api.mainModule( 'src/client/js/index.js', 'client' );
     api.mainModule( 'src/server/js/index.js', 'server' );
@@ -25,7 +25,7 @@ Package.onUse( function( api ){
 Package.onTest( function( api ){
     configure( api );
     api.use( 'tinytest' );
-    api.use( 'pwix:admin-first' );
+    api.use( 'pwix:startup-app-admin' );
     api.mainModule( 'test/js/index.js' );
 });
 

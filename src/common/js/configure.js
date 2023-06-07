@@ -1,22 +1,22 @@
 /*
- * pwix:admin-first/src/common/js/configure.js
+ * pwix:startup-app-admin/src/common/js/configure.js
  */
 
 import merge from 'merge';
 
-AdminFirst._defaults = {
-    adminRole: AF_APP_ADMIN_ROLE,
+pwixSAA._defaults = {
+    adminRole: SAA_APP_ADMIN_ROLE,
     requireVerifiedEmail: true,
-    verbosity: AF_VERBOSE_NONE
+    verbosity: SAA_VERBOSE_NONE
 };
 
-AdminFirst.configure = function( o ){
-    AdminFirst._conf = merge.recursive( true, AdminFirst._defaults, o );
+pwixSAA.configure = function( o ){
+    pwixSAA._conf = merge.recursive( true, pwixSAA._defaults, o );
 
     // be verbose if asked for
-    if( AdminFirst._conf.verbosity & AF_VERBOSE_CONFIGURE ){
-        console.debug( 'pwix:admin-first configure() with', o, 'building', AdminFirst._conf );
+    if( pwixSAA._conf.verbosity & SAA_VERBOSE_CONFIGURE ){
+        console.debug( 'pwix:startup-app-admin configure() with', o, 'building', pwixSAA._conf );
     }
 }
 
-AdminFirst._conf = merge.recursive( true, AdminFirst._defaults );
+pwixSAA._conf = merge.recursive( true, pwixSAA._defaults );

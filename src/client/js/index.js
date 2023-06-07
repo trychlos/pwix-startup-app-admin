@@ -1,5 +1,5 @@
 /*
- * pwix:admin-first/src/client/js/index.js
+ * pwix:startup-app-admin/src/client/js/index.js
  */
 
 import '../../common/js/index.js';

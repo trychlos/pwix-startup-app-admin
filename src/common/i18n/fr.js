@@ -1,9 +1,9 @@
 /*
- * pwix:admin-first/src/common/i18n/fr.js
+ * pwix:startup-app-admin/src/common/i18n/fr.js
  */
 
-AdminFirst.i18n = {
-    ... AdminFirst.i18n,
+pwixSAA.i18n = {
+    ... pwixSAA.i18n,
     ... {
         fr: {
             signup: {
