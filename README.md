@@ -16,6 +16,14 @@ Known configuration options are:
 
     Defaults to `AF_APP_ADMIN_ROLE` constant.
 
+- `requireVerifiedEmail`
+
+    Whether the newly created user must provide a verifiable email, and make it verified, in order to get the Administrator privilege.
+
+    This means that the initial login page will stay stuck until the mail is verified.
+
+    Defaults to `true`.
+
 - `verbosity`
 
     Define the expected verbosity level.

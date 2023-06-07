@@ -6,6 +6,7 @@ import merge from 'merge';
 
 AdminFirst._defaults = {
     adminRole: AF_APP_ADMIN_ROLE,
+    requireVerifiedEmail: true,
     verbosity: AF_VERBOSE_NONE
 };
 
