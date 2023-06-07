@@ -2,7 +2,7 @@
  * pwix:startup-app-admin/src/common/js/index.js
  */
 
-import './startup-app-admin.js';
+import './saa.js';
 //
 import './constants.js';
 //

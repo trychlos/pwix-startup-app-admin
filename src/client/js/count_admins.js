@@ -4,6 +4,11 @@
 
 import { ReactiveVar } from 'meteor/reactive-var';
 
+/**
+ * @summary Get the count of users which have the application administrator role
+ * @param {Object} o the options object, with keys:
+ *  - result: must address a ReactiveVar which will hold the result
+ */
 pwixSAA.countAdmins = function( o ){
     if( !o || !o.result || !( o.result instanceof ReactiveVar )){
         console.error( 'expects a ReactiveVar, found', o.result );
@@ -12,7 +17,7 @@ pwixSAA.countAdmins = function( o ){
             if( err ){
                 console.error( err );
             } else {
-                console.debug( 'afCountAdmins, res=', res );
+                //console.debug( 'afCountAdmins, res=', res );
                 o.result.set( parseInt( res ));
             }
         });

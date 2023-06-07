@@ -1,15 +1,14 @@
 /*
- * pwix:startup-app-admin/src/client/components/afCreate/afCreate.js
+ * pwix:startup-app-admin/src/client/components/saaCreate/saaCreate.js
  */
 
 import { pwixI18n } from 'meteor/pwix:i18n';
-import { ReactiveVar } from 'meteor/reactive-var';
 
 import 'meteor/pwix:accounts';
 
-import './afCreate.html';
+import './saaCreate.html';
 
-Template.afCreate.helpers({
+Template.saaCreate.helpers({
     args(){
         let text = pwixI18n.label( I18N, 'signup.text_four' );
         if( pwixSAA._conf.requireVerifiedEmail ){

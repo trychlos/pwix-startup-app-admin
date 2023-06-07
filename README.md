@@ -85,13 +85,11 @@ The globally exported object.
 
 ### Blaze components
 
-- `afCreate`
+- `saaCreate`
 
     Let the user enter his credentials for the first time.
 
-    All passed-in arguments will be directly passed to `acUserLogin` underlying component. Additional arguments are taken here:
-
-    - 
+    All passed-in arguments will be directly passed to `acUserLogin` underlying component.
 
 ### Constants
 
