@@ -12,7 +12,16 @@
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
 |    8 | 2023- 6- 7 | when validating an email, should not re-display the signup div - use the route to display something other |
-|    9 |  |  |
+|    9 | 2023- 6- 8 | Have a way to say the user he is an admin |
+|      |            | this is difficult because: |
+|      |            | - it is not possible to temporarily override the pwix:accounts display options as verifying an email |
+|      |            |   implies to reload the page, thus to reinitialize the packages configurations and so overrides are lost |
+|      |            | - the pwix:accounts email verification function defaults to display a confirmation dialog box; |
+|      |            |   it seems inappropriate to display another dialog box on top of the previous |
+|      |            | - because there is already a dialog box on the screen at this time, a tolert alert is not appropriate either |
+|      |            | Other possible ways: |
+|      |            | - at startup, override if not yet any admin, but getting the admin count arrives long time after the startup! |
+|      |            | - use localStorage to survive the reloads |
 |   10 |  |  |
 |   11 |  |  |
 

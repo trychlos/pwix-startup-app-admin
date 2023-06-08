@@ -122,6 +122,8 @@ New and updated translations are willingly accepted, and more than welcome. Just
 
 `pwix:startup-app-admin` doesn't user any cookie or comparable technology.
 
+Under the hood, `pwix:startup-app-admin` makes use of the `localStorage` facility to store some informations in order to survive the reloads. These informations are temporary, and fully cleanup as soon as an administrator is identified.
+
 ---
 P. Wieser
 - Last updated on 2023, May 11th

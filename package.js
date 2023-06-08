@@ -38,6 +38,7 @@ function configure( api ){
     api.use( 'pwix:accounts' );
     api.use( 'pwix:layout' );
     api.use( 'pwix:roles' );
+    api.use( 'pwix:tolert' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
     api.addFiles( 'src/client/components/saaCreate/saaCreate.js', 'client' );
 }
