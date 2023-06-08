@@ -19,11 +19,6 @@ function setAdminPrivileges( email ){
                     Meteor.call( 'pwixRoles.addUsersToRoles', user._id, pwixSAA._conf.adminRole, ( err, res ) => {
                         if( err ){
                             console.error( err );
-                        } else {
-                            pwixBootbox.alert({
-                                title: pwixI18n.label( I18N, 'confirm.title' ),
-                                message: pwixI18n.label( I18N, 'confirm.permsgot' )
-                            });
                         }
                     });
                 }
@@ -50,6 +45,9 @@ function onEmailVerified( event, data ){
                     title: pwixI18n.label( I18N, 'confirm.title' ),
                     message: pwixI18n.label( I18N, 'confirm.another_admin' )
                 });
+                // restore the previous pwix:accounts configuration
+                pwiAccounts.opts().onVerifiedEmailTitle( pwixSAA._temp.title );
+                pwiAccounts.opts().onVerifiedEmailMessage( pwixSAA._temp.message );    
             } else {
                 setAdminPrivileges( data.email );
             }
@@ -82,6 +80,13 @@ function onUserCreated( event, data ){
         });
         self.$( '.acUserLogin' ).hide();
         FlowRouter.go( '/' );
+        // temporarily modify the pwix:accounts configuration to set ours
+        pwixSAA._temp = {
+            title: pwiAccounts.opts().onVerifiedEmailTitle(),
+            message: pwiAccounts.opts().onVerifiedEmailMessage()
+        };
+        pwiAccounts.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
+        pwiAccounts.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });    
     } else {
         setAdminPrivileges( data.options.email );
     }

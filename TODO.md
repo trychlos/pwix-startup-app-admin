@@ -11,9 +11,6 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|    7 | 2023- 6- 7 | There are too many alerts and boxes - to be decreased |
-|      |            | - when creating the account, two alerts -> pwix:bootbox has to be fixed to not override the first with the second |
-|      |            | - when validating an email, a first modal + a second modal, which overlaps the first without a good reason |
 |    8 | 2023- 6- 7 | when validating an email, should not re-display the signup div - use the route to display something other |
 |    9 |  |  |
 |   10 |  |  |
@@ -33,6 +30,12 @@
 |      | 2023- 6- 5 | done: SAA_ |
 |    6 | 2023- 6- 7 | Have a responsive width for the display |
 |      | 2023- 6- 7 | done |
+|    7 | 2023- 6- 7 | There are too many alerts and boxes - to be decreased |
+|      |            | - when creating the account, two alerts -> pwix:bootbox has to be fixed to not override the first with the second |
+|      |            | - when validating an email, a first modal + a second modal, which overlaps the first without a good reason |
+|      | 2023- 6- 8 | bootbox alerts are now stacked with v 1.2.0 |
+|      | 2023- 6- 8 | pwix:accounts take into account onVerifiedEmail configuration |
+|      | 2023- 6- 8 | done |
 
 ---
 P. Wieser

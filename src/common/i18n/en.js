@@ -10,7 +10,7 @@ pwixSAA.i18n = {
                 title: 'Administrator creation',
                 another_admin: 'Unfortunately, anoter account has been elevated to application administration. Your request must be cancelled.',
                 permsgot: 'You have got Administration privileges.<br />'
-                    +'Please be conscious of your responsabilities, and have a good job',
+                    +'Please be conscious of your responsabilities, and have a good job.',
                 required: 'Though you have been successfully connected, you only will get the Administration privilege after having validated your email address.'
             },
             signup: {
