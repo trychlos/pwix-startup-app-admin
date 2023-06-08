@@ -6,18 +6,6 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { pwixBootbox } from 'meteor/pwix:bootbox';
 import { tlTolert } from 'meteor/pwix:tolert';
 
-// restore the previous pwix:accounts configuration
-//  it happens that verifying the email address implies a page reload, and thus a reinitialization of the packages configurations
-//  so there is no way to temporarily override those of pwix:accounts :()
-function restoreOpts(){
-    /*
-    if( pwixSAA._temp ){
-        pwiAccounts.opts().onVerifiedEmailTitle( pwixSAA._temp.title );
-        pwiAccounts.opts().onVerifiedEmailMessage( pwixSAA._temp.message );    
-    }
-    */
-}
-
 function setAdminPrivileges( email ){
     Meteor.call( 'pwixRoles.createRole', pwixSAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
         if( err ){
@@ -32,12 +20,6 @@ function setAdminPrivileges( email ){
                     Meteor.call( 'pwixRoles.addUsersToRoles', user._id, pwixSAA._conf.adminRole, ( err, res ) => {
                         if( err ){
                             console.error( err );
-                        } else {
-                            // at the moment, the pwix:accounts email verification has displayed a confirmation dialog box
-                            //  it is most probable that the user didn't yet have acknowledged it
-                            // it is so very difficult to either display another diaog, or send a tolert as this later is masked under the dialog
-                            // do nothing at the moment
-                            //tlTolert.success( pwixI18n.label( I18N, 'confirm.permsgot' ));
                         }
                     });
                 }
@@ -70,7 +52,6 @@ function onEmailVerified( event, data ){
             } else {
                 setAdminPrivileges( data.email );
             }
-            restoreOpts();
         });
     }
 }
@@ -103,7 +84,7 @@ function onUserCreated( event, data ){
             message: pwixI18n.label( I18N, 'confirm.required' )
         });
         // temporarily modify the pwix:accounts configuration to set our own values
-        localStorage.setItem( 'opts', JSON.stringify({
+        localStorage.setItem( LS_OPTIONS, JSON.stringify({
             title: pwiAccounts.opts().onVerifiedEmailTitle(),
             message: pwiAccounts.opts().onVerifiedEmailMessage()
         }));

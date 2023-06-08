@@ -3,23 +3,26 @@
  */
 
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Tracker } from 'meteor/tracker';
 
 /**
- * @summary Get the count of users which have the application administrator role
- * @param {Object} o the options object, with keys:
- *  - result: must address a ReactiveVar which will hold the result
+ * @summary A ReactiveVar which handles the count of app admins
  */
-pwixSAA.countAdmins = function( o ){
-    if( !o || !o.result || !( o.result instanceof ReactiveVar )){
-        console.error( 'expects a ReactiveVar, found', o.result );
-    } else {
-        Meteor.call( 'pwixRoles.countUsersInRoles', pwixSAA._conf.adminRole, ( err, res ) => {
-            if( err ){
-                console.error( err );
-            } else {
-                //console.debug( 'afCountAdmins, res=', res );
-                o.result.set( parseInt( res ));
-            }
-        });
+pwixSAA.countAdmins = new ReactiveVar( -1 );
+
+Tracker.autorun(() => {
+    Meteor.call( 'pwixRoles.countUsersInRoles', pwixSAA._conf.adminRole, ( err, res ) => {
+        if( err ){
+            console.error( err );
+        } else {
+            //console.debug( 'afCountAdmins, res=', res );
+            pwixSAA.countAdmins.set( parseInt( res ));
+        }
+    });
+});
+
+Tracker.autorun(() => {
+    if( pwixSAA._conf.verbosity & SAA_VERBOSE_COUNTS ){
+        console.debug( 'pwix:startup-app-admin countAdmins', pwixSAA.countAdmins.get());
     }
-};
+});

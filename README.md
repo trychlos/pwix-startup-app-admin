@@ -38,6 +38,10 @@ Known configuration options are:
 
         Trace `pwixSAA.configure()` calls and their result
 
+    - `SAA_VERBOSE_COUNTS`
+
+        Trace the changes of `countAdmins` ReactiveVar.
+
 Please note that `pwixSAA.configure()` method should be called in the same terms both in client and server sides.
 
 Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `pwixSAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
@@ -48,40 +52,15 @@ The globally exported object.
 
 ### Methods
 
- - `pwixSAA.countAdmins( o )`
+### Data
+
+ - `pwixSAA.countAdmins`
 
     Client only.
 
-    Compute the count of users which have the `adminRole` role.
+    A `ReactiveVar` which handles the count of application administrators.
 
-    This method has to request the server, and thus provides an asynchronous result.
-    
-    It thus must be provided an argument object, with a ReactiveVar as a `result` key. This ReactiveVar will be set to the integer result of the method call.
-
-    Example:
-
-    - in `template.html`
-
-        ```
-            {{ displayAdminsCount }}
-        ```
-
-    - in `template.js`
-
-        ```
-            import { ReactiveVar } from 'meteor/reactive-var';
-
-            Template.template.onCreated( function(){
-                this.result = new ReactiveVar();
-                pwixSAA.countAdmins({ result: this.result });
-            });
-
-            Template.template.helpers({
-                displayAdminsCount(){
-                    return Template.instance().result.get();
-                }
-            });
-        ```
+    Its value is initialized to -1, and set to 0 or greater as soon as it receives the data from the server.
 
 ### Blaze components
 
