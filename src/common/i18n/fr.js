@@ -6,6 +6,11 @@ pwixSAA.i18n = {
     ... pwixSAA.i18n,
     ... {
         fr: {
+            alt: {
+                text: ''
+                    +'<p>En attente de la vérification d\'une adresse de messagerie...</p>'
+                    +'<p>Cliquez ici si vous souhaitez essayer de définir un nouveau compte candidat au privil-ge d\'administration.</p>'
+            },
             confirm: {
                 title: 'Création du rôle Administrateur',
                 another_admin: 'Un autre compte a malheurement acquis les privilèges d\'administration}. Votre requête doit être abandonnée.',

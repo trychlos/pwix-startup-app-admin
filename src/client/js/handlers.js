@@ -4,7 +4,6 @@
 
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { pwixBootbox } from 'meteor/pwix:bootbox';
-import { tlTolert } from 'meteor/pwix:tolert';
 
 function setAdminPrivileges( email ){
     Meteor.call( 'pwixRoles.createRole', pwixSAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
@@ -36,8 +35,8 @@ function setAdminPrivileges( email ){
  */
 function onEmailVerified( event, data ){
     //console.debug( arguments );
-    console.debug( pwiAccounts.opts().onVerifiedEmailTitle());
-    console.debug( pwiAccounts.opts().onVerifiedEmailMessage());
+    //console.debug( pwiAccounts.opts().onVerifiedEmailTitle());
+    //console.debug( pwiAccounts.opts().onVerifiedEmailMessage());
     if( pwixSAA._conf.requireVerifiedEmail ){
         // make sure we do not have got another admin in the meantime
         //  note: race condition here

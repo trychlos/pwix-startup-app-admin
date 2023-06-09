@@ -3,13 +3,27 @@
  */
 
 import { pwixI18n } from 'meteor/pwix:i18n';
+import { ReactiveVar } from 'meteor/reactive-var';
 
 import 'meteor/pwix:accounts';
 
 import './saaCreate.html';
 import './saaCreate.less';
 
+Template.saaCreate.onCreated( function(){
+    const self = this;
+
+    self.SAA = {
+        hideComponent: new ReactiveVar( false )
+    };
+
+    self.autorun(() => {
+        self.SAA.hideComponent.set( localStorage.getItem( LS_OPTIONS ));
+    });
+});
+
 Template.saaCreate.helpers({
+    // the acUserLogin component args
     args(){
         let one = pwixI18n.label( I18N, 'signup.text_one' );
         if( pwixSAA._conf.requireVerifiedEmail ){
@@ -36,5 +50,22 @@ Template.saaCreate.helpers({
                 resetLink: false
             }
         };
+    },
+
+    // internationalization
+    i18n( opt ){
+        return pwixI18n.label( I18N, opt.hash.key );
+    },
+
+    // whether to show the acUserLogin component ?
+    hideComponent( opt ){
+        return Template.instance().SAA.hideComponent.get();
+    }
+});
+
+Template.saaCreate.events({
+    'click .js-show'( event, instance ){
+        const hide = instance.SAA.hideComponent.get();
+        instance.SAA.hideComponent.set( !hide );
     }
 });
