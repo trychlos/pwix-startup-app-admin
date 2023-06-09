@@ -11,7 +11,7 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   11 |  |  |
+|   11 | 2023- 6- 9 | Decrease the application integration footprint |
 |   12 |  |  |
 
 ---
