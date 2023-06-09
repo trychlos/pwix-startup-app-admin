@@ -10,7 +10,6 @@ if( false ){
 }
 
 checkNpmVersions({
-    'merge': '^2.1.1'
 },
     'pwix:startup-app-admin'
 );

@@ -2,8 +2,6 @@
  * pwix:startup-app-admin/src/common/js/configure.js
  */
 
-import merge from 'merge';
-
 pwixSAA._defaults = {
     adminRole: SAA_APP_ADMIN_ROLE,
     requireVerifiedEmail: true,
@@ -11,7 +9,10 @@ pwixSAA._defaults = {
 };
 
 pwixSAA.configure = function( o ){
-    pwixSAA._conf = merge.recursive( true, pwixSAA._defaults, o );
+    pwixSAA._conf = {
+        ...pwixSAA._defaults,
+        ...o
+    };
 
     // be verbose if asked for
     if( pwixSAA._conf.verbosity & SAA_VERBOSE_CONFIGURE ){
@@ -19,4 +20,4 @@ pwixSAA.configure = function( o ){
     }
 }
 
-pwixSAA._conf = merge.recursive( true, pwixSAA._defaults );
+pwixSAA._conf = { ...pwixSAA._defaults };

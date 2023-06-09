@@ -11,7 +11,6 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   11 | 2023- 6- 9 | Decrease the application integration footprint |
 |   12 |  |  |
 
 ---
@@ -49,6 +48,8 @@
 |      |            | - use localStorage to survive the reloads |
 |      | 2023- 6- 9 | done |
 |   10 | 2023- 6- 9 | upgrade bootbox to 1.3.0 (use onVerifiedEmailCb) |
+|      | 2023- 6- 9 | done |
+|   11 | 2023- 6- 9 | Decrease the application integration footprint |
 |      | 2023- 6- 9 | done |
 
 ---

@@ -2,7 +2,51 @@
 
 ## What is it ?
 
-A Meteor package template which, once added to the application, let it start by creating a global Application Administrator account.
+A Meteor package (Blaze-based) template which, once added to the application, let it start by creating a global Application Administrator account.
+
+## Usage
+
+### Install the package
+
+`meteor add pwix:startup-app-admin`
+
+### Layout integration
+
+#### In template.html
+
+```
+    {{#if shouldDisplayContent }}
+        {{> your_home_page_content }}
+    {{else}}
+        {{> saaCreate (saaArgs) }}
+    {{/if}}
+```
+
+#### In template.js
+
+```
+    Template.template.helpers({
+
+        // when we do not have yet an application administrator, let the user create the first one
+        //  for now, at least pass the current args (which is implied nonetheless but that is explicit this way)
+        saaArgs(){
+            return {
+                ... Template.currentData()
+            };
+        },
+
+        // display the normal content of the page if we do not have the pwix:startup-app-admin package, or there is already an admin
+        shouldDisplayContent(){
+            const hasPackage = Object.keys( Package ).includes( 'pwix:startup-app-admin' );
+            let hasAdmin = false;
+            if( hasPackage ){
+                hasAdmin = Package['pwix:startup-app-admin'].pwixSAA.countAdmins.get() > 0;
+            }
+            const APP = Template.instance().APP;
+            return !hasPackage || hasAdmin;
+        }
+    });
+```
 
 ## Configuration
 
@@ -14,7 +58,7 @@ Known configuration options are:
 
     Define the name of the role of the application adminitrator.
 
-    Defaults to `SAA_APP_ADMIN_ROLE` constant.
+    Defaults to [`SAA_APP_ADMIN_ROLE`](#constants) constant.
 
 - `requireVerifiedEmail`
 

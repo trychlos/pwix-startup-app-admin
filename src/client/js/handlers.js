@@ -73,9 +73,6 @@ function onEmailVerified( event, data ){
     }
  */
 function onUserCreated( event, data ){
-    // hide the signup div
-    self.$( '.acUserLogin' ).hide();
-    FlowRouter.go( '/' );
     if( pwixSAA._conf.requireVerifiedEmail ){
         // reminder that the email needs to be verified
         pwixBootbox.alert({
@@ -88,7 +85,10 @@ function onUserCreated( event, data ){
             message: pwiAccounts.opts().onVerifiedEmailMessage()
         }));
         pwixSAA._setOptions();
+        location.reload();
     } else {
+        self.$( '.acUserLogin' ).hide();
+        FlowRouter.go( '/' );
         setAdminPrivileges( data.options.email );
     }
 }
