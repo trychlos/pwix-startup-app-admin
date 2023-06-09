@@ -37,6 +37,7 @@ function configure( api ){
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
     api.use( 'pwix:accounts' );
+    api.use( 'pwix:bootbox@1.3.0', 'client' );
     api.use( 'pwix:layout' );
     api.use( 'pwix:roles' );
     api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
