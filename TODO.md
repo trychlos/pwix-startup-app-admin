@@ -11,7 +11,8 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   12 |  |  |
+|   12 | 2023- 6-12 | Have pwixBootbox.i18n.namespace() to let another package add a translation to this one |
+|   13 |  |  |
 
 ---
 ## Done
