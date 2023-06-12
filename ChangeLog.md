@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.1.0-rc
+### 1.1.0
 
-Release date: 
+Release date: 2023- 6-12
 
 - Define pwixSAA.i18n.namespace() method to let anyone provide translations (todo #12)
 
@@ -16,4 +16,4 @@ Release date: 2023- 6- 9
 
 ---
 P. Wieser
-- Last updated on 2023, June 9th
+- Last updated on 2023, June 12th

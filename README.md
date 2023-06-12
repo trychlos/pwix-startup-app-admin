@@ -96,6 +96,12 @@ The globally exported object.
 
 ### Methods
 
+- `pwixSAA.i18n.namespace()`
+
+    This method returns the `pwix:i18n` namespace of the `pwix:startu-app-admin` package.
+
+    With that name, anyone is so able to provide additional translations.
+
 ### Data
 
  - `pwixSAA.countAdmins`
@@ -139,6 +145,8 @@ Each of these dependencies should be installed at application level:
 
 ## Translations
 
+`pwix:startup-app-admin` provides at the moment **fr** and **en** translations.
+
 New and updated translations are willingly accepted, and more than welcome. Just be kind enough to submit a PR on the [Github repository](https://github.com/trychlos/pwix-startup-app-admin/pulls).
 
 ## Cookies and comparable technologies
@@ -149,4 +157,4 @@ Under the hood, `pwix:startup-app-admin` makes use of the `localStorage` facilit
 
 ---
 P. Wieser
-- Last updated on 2023, June 9th
+- Last updated on 2023, June 12th

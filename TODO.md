@@ -11,7 +11,6 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   12 | 2023- 6-12 | Have pwixBootbox.i18n.namespace() to let another package add a translation to this one |
 |   13 |  |  |
 
 ---
@@ -52,7 +51,9 @@
 |      | 2023- 6- 9 | done |
 |   11 | 2023- 6- 9 | Decrease the application integration footprint |
 |      | 2023- 6- 9 | done |
+|   12 | 2023- 6-12 | Have pwixSAA.i18n.namespace() to let another package add a translation to this one |
+|      | 2023- 6-12 | done |
 
 ---
 P. Wieser
-- Last updated on 2023, May 15th
+- Last updated on 2023, June 12th
