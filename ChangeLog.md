@@ -2,6 +2,12 @@
 
 ## ChangeLog
 
+### 1.1.1
+
+Release date: 2023- 6-12
+
+- Fix Meteor packaging
+
 ### 1.1.0
 
 Release date: 2023- 6-12
