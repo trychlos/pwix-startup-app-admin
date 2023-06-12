@@ -14,6 +14,6 @@ SAA_VERBOSE_COUNTS    = 0x01 <<  1;
 
 PACKAGE_NAME = 'pwix:startup-app-admin';
 
-I18N = PACKAGE_NAME;
+I18N = PACKAGE_NAME+':i18n';
 
 LS_OPTIONS = 'pwix:startup-app-admin/accounts';
