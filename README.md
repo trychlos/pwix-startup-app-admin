@@ -136,6 +136,7 @@ Instead we check npm versions of installed packages at runtime, on server startu
 
 Dependencies as of v 1.0.0:
 ```
+    'lodash': '^4.17.0'
 ```
 
 Each of these dependencies should be installed at application level:

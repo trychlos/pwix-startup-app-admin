@@ -10,6 +10,7 @@ if( false ){
 }
 
 checkNpmVersions({
+    'lodash': '^4.17.0'
 },
     'pwix:startup-app-admin'
 );
