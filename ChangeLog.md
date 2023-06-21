@@ -7,6 +7,7 @@
     Release date: 
 
     - Add lodash dependency
+    - configure() now acts both as a getter and a setter
 
 ### 1.1.1
 
