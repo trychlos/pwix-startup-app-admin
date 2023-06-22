@@ -79,7 +79,7 @@ function onUserCreated( event, data ){
             title: pwixI18n.label( I18N, 'confirm.title' ),
             message: pwixI18n.label( I18N, 'confirm.required' )
         });
-        // temporarily modify the pwix:accounts configuration to set our own values
+        // temporarily modify the pwix:accounts-ui configuration to set our own values
         localStorage.setItem( LS_OPTIONS, JSON.stringify({
             title: pwixAccounts.opts().onVerifiedEmailTitle(),
             message: pwixAccounts.opts().onVerifiedEmailMessage()

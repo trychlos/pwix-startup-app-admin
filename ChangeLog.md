@@ -8,6 +8,7 @@
 
     - Add lodash dependency
     - configure() now acts both as a getter and a setter
+    - Fix pwix:accounts-ui (renamed) dependency
 
 ### 1.1.1
 
