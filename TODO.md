@@ -11,7 +11,9 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   13 |  |  |
+|   13 | 2023- 6-22 | Default stylesheet should better emphasize of title and subtitles (input label are last, then input group titles, then dialog subtitles, and at last dialog title) |
+|   14 | 2023- 6-22 | The end (And voilà,....) should only be displayed after the user has created his account) - click sign-up, display the message, click another button to go on |
+|   15 |  |  |
 
 ---
 ## Done
