@@ -41,10 +41,10 @@ Template.saaCreate.helpers({
                 initialPanel: AC_PANEL_SIGNUP,
                 renderMode: AC_RENDER_DIV,
                 haveCancelButton: false,
+                signupLegendEmail: pwixI18n.label( I18N, 'signup.email_legend' ),
+                signupLegendPassword: pwixI18n.label( I18N, 'signup.password_legend' ),
                 signupPasswordTwice: true,
                 signupTextOne: one,
-                signupTextTwo: pwixI18n.label( I18N, 'signup.text_two' ),
-                signupTextThree: pwixI18n.label( I18N, 'signup.text_three' ),
                 signupTextFour: four,
                 signinLink: false,
                 resetLink: false

@@ -19,23 +19,19 @@ pwixSAA.i18n = {
                 required: 'Bien que vous ayez été automatiquement connecté, vous ne recevrez les privilèges d\'administration qu\' après avoir validé votre adresse de messagerie.'
             },
             signup: {
+                email_legend: 'Spécifiez une adresse de messagerie que vous controlez',
                 text_one: ''
                     +'<p class="">Bonjour,</p>'
                     +'<p class="">C\'est le premier lancement de votre application. Merci de votre confiance.</p>'
                     +'<p class="">Il est nécessaire de définir dès maintenant le premier administrateur du site.</p>',
                 one_verified: ''
-                    +'<p><b>Merci de noter qu\'une fois cette procédure commencée, le premier compte à valider son adresse de messagerie '
-                    +'obtiendra automatiquement les privilèges d\'administration. Ne perdez pas de temps. Ne laissez personne obtenir '
-                    +'ces permissions frauduleusement !</b></p>',
-                text_two: ''
-                    +'<p class="">Spécifiez ci-dessous une adresse de messagerie que vous controlez.</p>',
-                text_three: ''
-                    +'<p class="">Pour des raisons de sécurité et de fiabilité, une double saisie du mot de passe est demandée.</p>',
+                    +'<p>Les privilèges d\'administration vous seront attribués dès que votre adresse de messagerie aura été vérifiée.</p>',
                 text_four: ''
                     +'<p class="">Et voilà !</p>',
                 four_verified: ''
                     +'<p class="">A la demande de l\'application, le privilège d\'administrateur vous sera attribué dès que vous aurez '
-                    +'validé votre adresse de messagerie en cliquant sur le lien contenu dans le mail que nous vous avons envoyé.</p>'
+                    +'validé votre adresse de messagerie en cliquant sur le lien contenu dans le mail que nous vous avons envoyé.</p>',
+                password_legend: 'Pour des raisons de sécurité, une double saisie du mot de passe est demandée'
             }
         }
     }

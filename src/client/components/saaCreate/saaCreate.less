@@ -19,4 +19,27 @@
         line-height: 200%;
         padding: 1em 2em;
     }
+
+    fieldset > :not( :first-child ){
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    fieldset :last-child {
+        //margin-bottom: 0.5em;
+    }
+    fieldset {
+        border: var( --bs-border-width ) var( --bs-border-style ) var( --bs-border-color );
+        padding: 0 0.5em;
+        legend {
+            font-size: 110%;
+            padding: 0 0.5em;
+            width: auto;
+            float: none;
+        }
+    }
+
+    .ac-text-one {
+        font-size: 105%;
+        font-weight: bold;
+    }
 }
