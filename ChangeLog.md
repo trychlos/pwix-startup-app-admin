@@ -10,7 +10,7 @@
     - configure() now acts both as a getter and a setter
     - Fix pwix:accounts-ui (renamed) dependency
     - Improve the display (todo #13)
-    - Upgrade pwix:layout version requirement to get ui_layout.less constants
+    - Upgrade pwix:layout version requirement to get layout.less constants
 
 ### 1.1.1
 
