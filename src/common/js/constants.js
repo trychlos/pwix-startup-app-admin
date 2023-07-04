@@ -10,14 +10,12 @@ SAA.C = {
     },
 
     // verbosity levels
-    NONE: 0,
-    CONFIGURE: 0x01 <<  0,
-    COUNTS:    0x01 <<  1
+    Verbose: {
+        NONE: 0,
+        CONFIGURE: 0x01 <<  0,
+        COUNTS:    0x01 <<  1
+    }
 };
-
-// exported
-
-SAA.C.Admin.ROLE = 'APP_ADMIN';
 
 // non exported
 
