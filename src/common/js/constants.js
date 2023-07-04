@@ -17,7 +17,7 @@ SAA.C = {
 
 // exported
 
-SAA_APP_ADMIN_ROLE = 'APP_ADMIN';
+SAA.C.Admin.ROLE = 'APP_ADMIN';
 
 // non exported
 

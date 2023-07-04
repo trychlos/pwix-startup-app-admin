@@ -58,7 +58,7 @@ Known configuration options are:
 
     Define the name of the role of the application adminitrator.
 
-    Defaults to [`SAA_APP_ADMIN_ROLE`](#constants) constant.
+    Defaults to [`SAA.C.Admin.ROLE`](#constants) constant.
 
 - `requireVerifiedEmail`
 
@@ -122,7 +122,7 @@ The globally exported object.
 
 ### Constants
 
-- `SAA_APP_ADMIN_ROLE`
+- `SAA.C.Admin.ROLE`
 
     The name of the application admin role.
 

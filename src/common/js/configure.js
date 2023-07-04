@@ -7,7 +7,7 @@ import _ from 'lodash';
 SAA._conf = {};
 
 SAA._defaults = {
-    adminRole: SAA_APP_ADMIN_ROLE,
+    adminRole: SAA.C.Admin.ROLE,
     requireVerifiedEmail: true,
     verbosity: SAA.C.Verbose.NONE
 };
