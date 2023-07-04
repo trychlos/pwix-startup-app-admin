@@ -4,6 +4,8 @@
 
 import _ from 'lodash';
 
+pwixSAA._conf = {};
+
 pwixSAA._defaults = {
     adminRole: SAA_APP_ADMIN_ROLE,
     requireVerifiedEmail: true,
