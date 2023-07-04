@@ -72,12 +72,18 @@ function onEmailVerified( event, data ){
         "autoConnect": true
     }
  */
+
+function _bootbox_ack(){
+    location.reload();
+}
+
 function onUserCreated( event, data ){
     if( SAA._conf.requireVerifiedEmail ){
         // reminder that the email needs to be verified
         Bootbox.alert({
             title: pwixI18n.label( I18N, 'confirm.title' ),
-            message: pwixI18n.label( I18N, 'confirm.required' )
+            message: pwixI18n.label( I18N, 'confirm.required' ),
+            cb: _bootbox_ack
         });
         // temporarily modify the pwix:accounts-ui configuration to set our own values
         localStorage.setItem( LS_OPTIONS, JSON.stringify({
@@ -85,7 +91,6 @@ function onUserCreated( event, data ){
             message: AccountsUI.opts().onVerifiedEmailMessage()
         }));
         SAA._setOptions();
-        //location.reload();
     } else {
         self.$( '.acUserLogin' ).hide();
         FlowRouter.go( '/' );
