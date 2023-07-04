@@ -11,6 +11,7 @@
     - Fix pwix:accounts-ui (renamed) dependency
     - Improve the display (todo #13)
     - Upgrade pwix:layout version requirement to get layout.less constants
+    - Upgrade pwix:bootbox version requirement to get Bootbox export
 
 ### 1.1.1
 

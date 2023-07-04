@@ -3,7 +3,7 @@
  */
 
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { pwixBootbox } from 'meteor/pwix:bootbox';
+import { Bootbox } from 'meteor/pwix:bootbox';
 
 function setAdminPrivileges( email ){
     Meteor.call( 'pwixRoles.createRole', pwixSAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
@@ -44,7 +44,7 @@ function onEmailVerified( event, data ){
             if( err ){
                 console.error( err );
             } else if( res > 0 ){
-                pwixBootbox.alert({
+                Bootbox.alert({
                     title: pwixI18n.label( I18N, 'confirm.title' ),
                     message: pwixI18n.label( I18N, 'confirm.another_admin' )
                 });
@@ -75,7 +75,7 @@ function onEmailVerified( event, data ){
 function onUserCreated( event, data ){
     if( pwixSAA._conf.requireVerifiedEmail ){
         // reminder that the email needs to be verified
-        pwixBootbox.alert({
+        Bootbox.alert({
             title: pwixI18n.label( I18N, 'confirm.title' ),
             message: pwixI18n.label( I18N, 'confirm.required' )
         });
