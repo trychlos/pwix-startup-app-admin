@@ -22,7 +22,7 @@ Tracker.autorun(() => {
 });
 
 Tracker.autorun(() => {
-    if( SAA._conf.verbosity & SAA_VERBOSE_COUNTS ){
+    if( SAA._conf.verbosity & SAA.C.Verbose.COUNTS ){
         console.debug( 'pwix:startup-app-admin countAdmins', SAA.countAdmins.get());
     }
 });

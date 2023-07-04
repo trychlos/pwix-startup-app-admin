@@ -2,13 +2,22 @@
  * pwix:startup-app-admin/src/common/js/constants.js
  */
 
+SAA.C = {
+
+    // admin role
+    Admin: {
+        ROLE: 'APP_ADMIN'
+    },
+
+    // verbosity levels
+    NONE: 0,
+    CONFIGURE: 0x01 <<  0,
+    COUNTS:    0x01 <<  1
+};
+
 // exported
 
 SAA_APP_ADMIN_ROLE = 'APP_ADMIN';
-
-SAA_VERBOSE_NONE = 0;
-SAA_VERBOSE_CONFIGURE = 0x01 <<  0;
-SAA_VERBOSE_COUNTS    = 0x01 <<  1;
 
 // non exported
 

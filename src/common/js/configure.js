@@ -9,7 +9,7 @@ SAA._conf = {};
 SAA._defaults = {
     adminRole: SAA_APP_ADMIN_ROLE,
     requireVerifiedEmail: true,
-    verbosity: SAA_VERBOSE_NONE
+    verbosity: SAA.C.Verbose.NONE
 };
 
 /**
@@ -23,7 +23,7 @@ SAA.configure = function( o ){
     if( o && _.isObject( o )){
         _.merge( SAA._conf, SAA._defaults, o );
         // be verbose if asked for
-        if( SAA._conf.verbosity & SAA_VERBOSE_CONFIGURE ){
+        if( SAA._conf.verbosity & SAA.C.Verbose.CONFIGURE ){
             console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
         }
     }

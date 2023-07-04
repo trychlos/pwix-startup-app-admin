@@ -10,10 +10,7 @@ Package.onUse( function( api ){
     configure( api );
     api.export([
         'SAA',
-        'SAA_APP_ADMIN_ROLE',
-        'SAA_VERBOSE_NONE',
-        'SAA_VERBOSE_CONFIGURE',
-        'SAA_VERBOSE_COUNTS'
+        'SAA_APP_ADMIN_ROLE'
     ]);
     api.mainModule( 'src/client/js/index.js', 'client' );
     api.mainModule( 'src/server/js/index.js', 'server' );

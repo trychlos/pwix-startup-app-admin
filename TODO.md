@@ -12,7 +12,7 @@
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
 |   14 | 2023- 6-22 | The end (And voilà,....) should only be displayed after the user has created his account) - click sign-up, display the message, click another button to go on |
-|   15 | 2023- 7- 4 | Bump pwix:accounts-ui to 1.3.0 |
+|   15 | 2023- 7- 4 | Bump pwix:accounts-ui to 1.3.0 (when released) |
 |   16 |  |  |
 
 ---

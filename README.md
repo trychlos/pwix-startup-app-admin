@@ -74,15 +74,15 @@ Known configuration options are:
 
     The accepted value can be any or-ed combination of following:
 
-    - `SAA_VERBOSE_NONE`
+    - `SAA.C.Verbose.NONE`
 
         Do not display any trace log to the console
 
-    - `SAA_VERBOSE_CONFIGURE`
+    - `SAA.C.Verbose.CONFIGURE`
 
         Trace `SAA.configure()` calls and their result
 
-    - `SAA_VERBOSE_COUNTS`
+    - `SAA.C.Verbose.COUNTS`
 
         Trace the changes of `countAdmins` ReactiveVar.
 

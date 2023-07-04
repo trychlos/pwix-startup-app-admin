@@ -13,6 +13,7 @@
     - Upgrade pwix:layout version requirement to get layout.less constants
     - Upgrade pwix:bootbox version requirement to get Bootbox export
     - Rename globally exported pwixSAA to SAA (bumping candidate version number)
+    - Reorganize constants to not pollute global space
 
 ### 1.1.1
 
