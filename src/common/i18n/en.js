@@ -29,8 +29,8 @@ SAA.i18n = {
                 text_four: ''
                     +'<p class="">And <em>voilà</em>.</p>',
                 four_verified: ''
-                    +'<p class="">On application request, administrator privilege will be given to you as soon as '
-                    +'you will have validated your email address by clicking on the link we have sent to you.</p>',
+                    +'<p class="">On sign up, you will be automatically connected, and will receive our mail with a verification link. '
+                    +'Just click on this verification link to get administration privileges.</p>',
                 password_legend: 'For security reasons, please enter your password twice'
                 }
         }

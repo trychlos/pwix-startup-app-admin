@@ -29,8 +29,8 @@ SAA.i18n = {
                 text_four: ''
                     +'<p class="">Et voilà !</p>',
                 four_verified: ''
-                    +'<p class="">A la demande de l\'application, le privilège d\'administrateur vous sera attribué dès que vous aurez '
-                    +'validé votre adresse de messagerie en cliquant sur le lien contenu dans le mail que nous vous avons envoyé.</p>',
+                    +'A la création de votre nouveau compte, vous serez automatiquement connecté, et allez recevoir notre email avec un lien de vérification. '
+                    +'Il vous suffira de cliquer sur ce lien de vérification pour obtenir les privilèges d\'administration.',
                 password_legend: 'Pour des raisons de sécurité, une double saisie du mot de passe est demandée'
             }
         }
