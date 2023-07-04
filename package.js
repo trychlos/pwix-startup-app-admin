@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:startup-app-admin',
-    version: '1.1.2-rc',
+    version: '1.2.0-rc',
     summary: 'Force the application to start by creating an administrator',
     git: 'https://github.com/trychlos/pwix-startup-app-admin',
     documentation: 'README.md'
@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse( function( api ){
     configure( api );
     api.export([
-        'pwixSAA',
+        'SAA',
         'SAA_APP_ADMIN_ROLE',
         'SAA_VERBOSE_NONE',
         'SAA_VERBOSE_CONFIGURE',

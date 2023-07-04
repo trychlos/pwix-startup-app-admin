@@ -6,7 +6,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Bootbox } from 'meteor/pwix:bootbox';
 
 function setAdminPrivileges( email ){
-    Meteor.call( 'pwixRoles.createRole', pwixSAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
+    Meteor.call( 'pwixRoles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
         if( err ){
             console.error( err );
         } else {
@@ -16,7 +16,7 @@ function setAdminPrivileges( email ){
                     console.error( err );
                 } else {
                     const user = res;
-                    Meteor.call( 'pwixRoles.addUsersToRoles', user._id, pwixSAA._conf.adminRole, ( err, res ) => {
+                    Meteor.call( 'pwixRoles.addUsersToRoles', user._id, SAA._conf.adminRole, ( err, res ) => {
                         if( err ){
                             console.error( err );
                         }
@@ -37,10 +37,10 @@ function onEmailVerified( event, data ){
     //console.debug( arguments );
     //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
     //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
-    if( pwixSAA._conf.requireVerifiedEmail ){
+    if( SAA._conf.requireVerifiedEmail ){
         // make sure we do not have got another admin in the meantime
         //  note: race condition here
-        Meteor.call( 'pwixRoles.countUsersInRoles', pwixSAA._conf.adminRole, ( err, res ) => {
+        Meteor.call( 'pwixRoles.countUsersInRoles', SAA._conf.adminRole, ( err, res ) => {
             if( err ){
                 console.error( err );
             } else if( res > 0 ){
@@ -73,7 +73,7 @@ function onEmailVerified( event, data ){
     }
  */
 function onUserCreated( event, data ){
-    if( pwixSAA._conf.requireVerifiedEmail ){
+    if( SAA._conf.requireVerifiedEmail ){
         // reminder that the email needs to be verified
         Bootbox.alert({
             title: pwixI18n.label( I18N, 'confirm.title' ),
@@ -84,7 +84,7 @@ function onUserCreated( event, data ){
             title: AccountsUI.opts().onVerifiedEmailTitle(),
             message: AccountsUI.opts().onVerifiedEmailMessage()
         }));
-        pwixSAA._setOptions();
+        SAA._setOptions();
         //location.reload();
     } else {
         self.$( '.acUserLogin' ).hide();

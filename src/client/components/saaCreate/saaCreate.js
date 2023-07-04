@@ -26,11 +26,11 @@ Template.saaCreate.helpers({
     // the acUserLogin component args
     args(){
         let one = pwixI18n.label( I18N, 'signup.text_one' );
-        if( pwixSAA._conf.requireVerifiedEmail ){
+        if( SAA._conf.requireVerifiedEmail ){
             one += pwixI18n.label( I18N, 'signup.one_verified' );
         }
         let four = pwixI18n.label( I18N, 'signup.text_four' );
-        if( pwixSAA._conf.requireVerifiedEmail ){
+        if( SAA._conf.requireVerifiedEmail ){
             four += pwixI18n.label( I18N, 'signup.four_verified' );
         }
         return {

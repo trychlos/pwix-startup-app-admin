@@ -40,7 +40,7 @@ A Meteor package (Blaze-based) template which, once added to the application, le
             const hasPackage = Object.keys( Package ).includes( 'pwix:startup-app-admin' );
             let hasAdmin = false;
             if( hasPackage ){
-                hasAdmin = Package['pwix:startup-app-admin'].pwixSAA.countAdmins.get() > 0;
+                hasAdmin = Package['pwix:startup-app-admin'].SAA.countAdmins.get() > 0;
             }
             const APP = Template.instance().APP;
             return !hasPackage || hasAdmin;
@@ -50,7 +50,7 @@ A Meteor package (Blaze-based) template which, once added to the application, le
 
 ## Configuration
 
-The package's behavior can be configured through a call to the `pwixSAA.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
+The package's behavior can be configured through a call to the `SAA.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
 
 Known configuration options are:
 
@@ -80,23 +80,23 @@ Known configuration options are:
 
     - `SAA_VERBOSE_CONFIGURE`
 
-        Trace `pwixSAA.configure()` calls and their result
+        Trace `SAA.configure()` calls and their result
 
     - `SAA_VERBOSE_COUNTS`
 
         Trace the changes of `countAdmins` ReactiveVar.
 
-Please note that `pwixSAA.configure()` method should be called in the same terms both in client and server sides.
+Please note that `SAA.configure()` method should be called in the same terms both in client and server sides.
 
-Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `pwixSAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `SAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
 
-## `pwixSAA`
+## `SAA`
 
 The globally exported object.
 
 ### Methods
 
-- `pwixSAA.i18n.namespace()`
+- `SAA.i18n.namespace()`
 
     This method returns the `pwix:i18n` namespace of the `pwix:startu-app-admin` package.
 
@@ -104,7 +104,7 @@ The globally exported object.
 
 ### Data
 
- - `pwixSAA.countAdmins`
+ - `SAA.countAdmins`
 
     Client only.
 

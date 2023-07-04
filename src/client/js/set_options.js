@@ -9,7 +9,7 @@
 
 import { Tracker } from 'meteor/tracker';
 
-pwixSAA._setOptions = function(){
+SAA._setOptions = function(){
     if( localStorage.getItem( LS_OPTIONS )){
         // override the pwix:accounts-ui configuration to display our own message when there will be a new admin
         AccountsUI.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
@@ -18,11 +18,11 @@ pwixSAA._setOptions = function(){
     }
 };
 
-pwixSAA._setOptions();
+SAA._setOptions();
 
 // restore the original pwix:accounts-ui configuration as soon as we get an administrator
 Tracker.autorun(() => {
-    if( pwixSAA.countAdmins.get() > 0 ){
+    if( SAA.countAdmins.get() > 0 ){
         const o = localStorage.getItem( LS_OPTIONS );
         if( o ){
             const parsed = JSON.parse( o );

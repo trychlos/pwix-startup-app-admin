@@ -2,8 +2,8 @@
  * pwix:startup-app-admin/src/common/i18n/fr.js
  */
 
-pwixSAA.i18n = {
-    ... pwixSAA.i18n,
+SAA.i18n = {
+    ... SAA.i18n,
     ... {
         fr: {
             alt: {

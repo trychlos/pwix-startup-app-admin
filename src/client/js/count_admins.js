@@ -8,21 +8,21 @@ import { Tracker } from 'meteor/tracker';
 /**
  * @summary A ReactiveVar which handles the count of app admins
  */
-pwixSAA.countAdmins = new ReactiveVar( -1 );
+SAA.countAdmins = new ReactiveVar( -1 );
 
 Tracker.autorun(() => {
-    Meteor.call( 'pwixRoles.countUsersInRoles', pwixSAA._conf.adminRole, ( err, res ) => {
+    Meteor.call( 'pwixRoles.countUsersInRoles', SAA._conf.adminRole, ( err, res ) => {
         if( err ){
             console.error( err );
         } else {
             //console.debug( 'afCountAdmins, res=', res );
-            pwixSAA.countAdmins.set( parseInt( res ));
+            SAA.countAdmins.set( parseInt( res ));
         }
     });
 });
 
 Tracker.autorun(() => {
-    if( pwixSAA._conf.verbosity & SAA_VERBOSE_COUNTS ){
-        console.debug( 'pwix:startup-app-admin countAdmins', pwixSAA.countAdmins.get());
+    if( SAA._conf.verbosity & SAA_VERBOSE_COUNTS ){
+        console.debug( 'pwix:startup-app-admin countAdmins', SAA.countAdmins.get());
     }
 });

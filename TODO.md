@@ -24,7 +24,7 @@
 |      | 2023- 6- 5 | done: startup-app-admin |
 |    2 | 2023- 6- 5 | Change pck-template to exported-object + git mv src/common/js/pck-template.js src/common/js/exported-object.js |
 |    3 | 2023- 6- 5 | Change pckTemplate to exportedObject |
-|      | 2023- 6- 5 | done: pwixSAA |
+|      | 2023- 6- 5 | done: SAA |
 |    4 | 2023- 6- 5 | Change PCK_ to PREFIX_ |
 |      | 2023- 6- 5 | done: SAA_ |
 |    6 | 2023- 6- 7 | Have a responsive width for the display |
@@ -53,7 +53,7 @@
 |      | 2023- 6- 9 | done |
 |   11 | 2023- 6- 9 | Decrease the application integration footprint |
 |      | 2023- 6- 9 | done |
-|   12 | 2023- 6-12 | Have pwixSAA.i18n.namespace() to let another package add a translation to this one |
+|   12 | 2023- 6-12 | Have SAA.i18n.namespace() to let another package add a translation to this one |
 |      | 2023- 6-12 | done |
 |   13 | 2023- 6-22 | Default stylesheet should better emphasize of title and subtitles (input label are last, then input group titles, then dialog subtitles, and at last dialog title) |
 |      | 2023- 6-23 | done |
