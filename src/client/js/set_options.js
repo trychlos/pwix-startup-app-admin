@@ -12,9 +12,9 @@ import { Tracker } from 'meteor/tracker';
 pwixSAA._setOptions = function(){
     if( localStorage.getItem( LS_OPTIONS )){
         // override the pwix:accounts-ui configuration to display our own message when there will be a new admin
-        pwixAccounts.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
-        pwixAccounts.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });
-        pwixAccounts.opts().onVerifiedEmailCb(() => { location.reload(); });
+        AccountsUI.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
+        AccountsUI.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });
+        AccountsUI.opts().onVerifiedEmailCb(() => { location.reload(); });
     }
 };
 
@@ -26,9 +26,9 @@ Tracker.autorun(() => {
         const o = localStorage.getItem( LS_OPTIONS );
         if( o ){
             const parsed = JSON.parse( o );
-            pwixAccounts.opts().onVerifiedEmailTitle( parsed.title );
-            pwixAccounts.opts().onVerifiedEmailMessage( parsed.message );
-            pwixAccounts.opts().onVerifiedEmailCb( null );
+            AccountsUI.opts().onVerifiedEmailTitle( parsed.title );
+            AccountsUI.opts().onVerifiedEmailMessage( parsed.message );
+            AccountsUI.opts().onVerifiedEmailCb( null );
             localStorage.removeItem( LS_OPTIONS )   
         }
      }

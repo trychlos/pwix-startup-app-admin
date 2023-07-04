@@ -11,7 +11,7 @@ function setAdminPrivileges( email ){
             console.error( err );
         } else {
             //console.debug( 'role created', res );
-            Meteor.call( 'pwixAccounts.byEmailAddress', email, ( err, res ) => {
+            Meteor.call( 'AccountsUI.byEmailAddress', email, ( err, res ) => {
                 if( err ){
                     console.error( err );
                 } else {
@@ -35,8 +35,8 @@ function setAdminPrivileges( email ){
  */
 function onEmailVerified( event, data ){
     //console.debug( arguments );
-    //console.debug( pwixAccounts.opts().onVerifiedEmailTitle());
-    //console.debug( pwixAccounts.opts().onVerifiedEmailMessage());
+    //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
+    //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
     if( pwixSAA._conf.requireVerifiedEmail ){
         // make sure we do not have got another admin in the meantime
         //  note: race condition here
@@ -81,11 +81,11 @@ function onUserCreated( event, data ){
         });
         // temporarily modify the pwix:accounts-ui configuration to set our own values
         localStorage.setItem( LS_OPTIONS, JSON.stringify({
-            title: pwixAccounts.opts().onVerifiedEmailTitle(),
-            message: pwixAccounts.opts().onVerifiedEmailMessage()
+            title: AccountsUI.opts().onVerifiedEmailTitle(),
+            message: AccountsUI.opts().onVerifiedEmailMessage()
         }));
         pwixSAA._setOptions();
-        location.reload();
+        //location.reload();
     } else {
         self.$( '.acUserLogin' ).hide();
         FlowRouter.go( '/' );
