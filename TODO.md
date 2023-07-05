@@ -11,9 +11,15 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   14 | 2023- 6-22 | The end (And voilà,....) should only be displayed after the user has created his account) - click sign-up, display the message, click another button to go on |
 |   15 | 2023- 7- 4 | Bump pwix:accounts-ui to 1.3.0 (when released) |
-|   16 |  |  |
+|   17 | 2023- 7- 5 | be verbose for countAdmins |
+|   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
+|   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
+|   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
+|   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
+|   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
+|   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
+|   24 |  |  |
 
 ---
 ## Done
@@ -57,6 +63,10 @@
 |      | 2023- 6-12 | done |
 |   13 | 2023- 6-22 | Default stylesheet should better emphasize of title and subtitles (input label are last, then input group titles, then dialog subtitles, and at last dialog title) |
 |      | 2023- 6-23 | done |
+|   14 | 2023- 6-22 | The end (And voilà,....) should only be displayed after the user has created his account) - click sign-up, display the message, click another button to go on |
+|      | 2023- 7- 5 | the message is reviewed to better suit the workflow |
+|   16 | 2023- 7- 4 | _setOptions() doesn't display the right message when an email is verified |
+|      | 2023- 7- 5 | the setOptions() dynamic is reviewed |
 
 ---
 P. Wieser

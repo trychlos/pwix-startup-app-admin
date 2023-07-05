@@ -7,29 +7,37 @@
  * Do not display anything while waiting for the email verification (see saaCreate template)
  */
 
+import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { Tracker } from 'meteor/tracker';
 
+// ask to AccountsUI to push the onVerifiedEmail configuration, replacing with the one provided
+//  the configuration will be restored as soon as we have got an administrator
 SAA._setOptions = function(){
-    if( localStorage.getItem( LS_OPTIONS )){
-        // override the pwix:accounts-ui configuration to display our own message when there will be a new admin
-        AccountsUI.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
-        AccountsUI.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });
-        AccountsUI.opts().onVerifiedEmailCb(() => { location.reload(); });
-    }
+    // callback function
+    const _cb = function(){
+        location.reload();
+    };
+    // code
+    const count = AccountsUI.saveOnce( 'onVerifiedEmail' );
+    console.debug( 'saveOnce', count );
+    // override the pwix:accounts-ui configuration to display our own message when there will be a new admin
+    AccountsUI.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
+    AccountsUI.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });
+    AccountsUI.opts().onVerifiedEmailCb( _cb );
 };
 
-SAA._setOptions();
+// wait for the package configuration be done
+Meteor.startup(() => {
+    if( SAA._conf.requireVerifiedEmail && SAA.countAdmins.get() === 0 ){
+        SAA._setOptions();
+    }
+});
 
 // restore the original pwix:accounts-ui configuration as soon as we get an administrator
 Tracker.autorun(() => {
     if( SAA.countAdmins.get() > 0 ){
-        const o = localStorage.getItem( LS_OPTIONS );
-        if( o ){
-            const parsed = JSON.parse( o );
-            AccountsUI.opts().onVerifiedEmailTitle( parsed.title );
-            AccountsUI.opts().onVerifiedEmailMessage( parsed.message );
-            AccountsUI.opts().onVerifiedEmailCb( null );
-            localStorage.removeItem( LS_OPTIONS )   
-        }
-     }
+        const count = AccountsUI.restore( 'onVerifiedEmail' );
+        console.debug( 'restore', count );
+        SAA.waitForEmailVerification( false );
+    }
 });

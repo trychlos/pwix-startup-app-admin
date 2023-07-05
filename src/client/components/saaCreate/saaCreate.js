@@ -10,18 +10,6 @@ import 'meteor/pwix:accounts-ui';
 import './saaCreate.html';
 import './saaCreate.less';
 
-Template.saaCreate.onCreated( function(){
-    const self = this;
-
-    self.SAA = {
-        hideComponent: new ReactiveVar( false )
-    };
-
-    self.autorun(() => {
-        self.SAA.hideComponent.set( localStorage.getItem( LS_OPTIONS ));
-    });
-});
-
 Template.saaCreate.helpers({
     // the acUserLogin component args
     args(){
@@ -59,13 +47,13 @@ Template.saaCreate.helpers({
 
     // whether to show the acUserLogin component ?
     hideComponent( opt ){
-        return Template.instance().SAA.hideComponent.get();
+        return SAA._hideComponent.get();
     }
 });
 
 Template.saaCreate.events({
     'click .js-show'( event, instance ){
-        const hide = instance.SAA.hideComponent.get();
-        instance.SAA.hideComponent.set( !hide );
+        const hide = SAA._hideComponent.get();
+        SAA._hideComponent.set( !hide );
     }
 });

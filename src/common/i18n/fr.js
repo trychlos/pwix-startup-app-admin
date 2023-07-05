@@ -14,7 +14,7 @@ SAA.i18n = {
             confirm: {
                 title: 'Création du rôle Administrateur',
                 another_admin: 'Un autre compte a malheurement acquis les privilèges d\'administration}. Votre requête doit être abandonnée.',
-                permsgot: 'Les privilèges d\'administration viennent de vous être attribués.<br />'
+                permsgot: 'Félicitations !<br />Les privilèges d\'administration viennent de vous être attribués.<br />'
                 +'S\'il vous plait, soyez conscients de vos responsabilités, et faites un bon travail.',
                 required: 'Bien que vous ayez été automatiquement connecté, vous ne recevrez les privilèges d\'administration qu\' après avoir validé votre adresse de messagerie.'
             },

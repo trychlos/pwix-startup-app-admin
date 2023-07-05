@@ -15,7 +15,7 @@ Tracker.autorun(() => {
         if( err ){
             console.error( err );
         } else {
-            //console.debug( 'afCountAdmins, res=', res );
+            console.debug( 'countAdmins, res=', res );
             SAA.countAdmins.set( parseInt( res ));
         }
     });

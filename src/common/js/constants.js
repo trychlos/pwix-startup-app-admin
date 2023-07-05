@@ -20,7 +20,5 @@ SAA.C = {
 // non exported
 
 PACKAGE_NAME = 'pwix:startup-app-admin';
-
 I18N = PACKAGE_NAME+':i18n';
-
-LS_OPTIONS = 'pwix:startup-app-admin/accounts';
+WAIT_FOR_VERIFICATION = PACKAGE_NAME + '/WaitForVerification';

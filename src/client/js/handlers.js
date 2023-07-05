@@ -2,8 +2,9 @@
  * pwix:startup-app-admin/src/client/js/handlers.js
  */
 
-import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { Bootbox } from 'meteor/pwix:bootbox';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 function setAdminPrivileges( email ){
     Meteor.call( 'pwixRoles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
@@ -39,7 +40,7 @@ function onEmailVerified( event, data ){
     //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
     if( SAA._conf.requireVerifiedEmail ){
         // make sure we do not have got another admin in the meantime
-        //  note: race condition here
+        //  note: race condition here between pwixRoles.countUsersInRoles() and setAdminPrivileges()
         Meteor.call( 'pwixRoles.countUsersInRoles', SAA._conf.adminRole, ( err, res ) => {
             if( err ){
                 console.error( err );
@@ -73,11 +74,15 @@ function onEmailVerified( event, data ){
     }
  */
 
+// hide the signup panel when the user has acknowleded the dialog
 function _bootbox_ack(){
-    location.reload();
+    SAA._hideComponent.set( true );
 }
 
 function onUserCreated( event, data ){
+    // clear the current panel
+    AccountsUI.clearPanel();
+
     if( SAA._conf.requireVerifiedEmail ){
         // reminder that the email needs to be verified
         Bootbox.alert({
@@ -86,11 +91,9 @@ function onUserCreated( event, data ){
             cb: _bootbox_ack
         });
         // temporarily modify the pwix:accounts-ui configuration to set our own values
-        localStorage.setItem( LS_OPTIONS, JSON.stringify({
-            title: AccountsUI.opts().onVerifiedEmailTitle(),
-            message: AccountsUI.opts().onVerifiedEmailMessage()
-        }));
         SAA._setOptions();
+        // set our waiting flag
+        SAA.waitForEmailVerification( true );
     } else {
         self.$( '.acUserLogin' ).hide();
         FlowRouter.go( '/' );

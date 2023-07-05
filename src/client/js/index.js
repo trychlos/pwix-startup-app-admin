@@ -6,4 +6,6 @@ import '../../common/js/index.js';
 
 import './count_admins.js';
 import './handlers.js';
+import './hide_component.js';
 import './set_options.js';
+import './wait_for_verif.js';
