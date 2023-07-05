@@ -14,6 +14,13 @@ SAA.C = {
         NONE: 0,
         CONFIGURE: 0x01 <<  0,
         COUNTS:    0x01 <<  1
+    },
+
+    // workflow phases
+    Workflow: {
+        CREATE: 'CREATE',
+        WAITING: 'WAITING',
+        DONE: 'DONE'
     }
 };
 

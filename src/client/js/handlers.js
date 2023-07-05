@@ -38,21 +38,17 @@ function onEmailVerified( event, data ){
     //console.debug( arguments );
     //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
     //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
-    if( SAA._conf.requireVerifiedEmail ){
+    if( SAA._conf.requireVerifiedEmail && SAA.waitForEmailVerification()){
         // make sure we do not have got another admin in the meantime
-        //  note: race condition here between pwixRoles.countUsersInRoles() and setAdminPrivileges()
-        Meteor.call( 'pwixRoles.countUsersInRoles', SAA._conf.adminRole, ( err, res ) => {
-            if( err ){
-                console.error( err );
-            } else if( res > 0 ){
-                Bootbox.alert({
-                    title: pwixI18n.label( I18N, 'confirm.title' ),
-                    message: pwixI18n.label( I18N, 'confirm.another_admin' )
-                });
-            } else {
-                setAdminPrivileges( data.email );
-            }
-        });
+        //  note: race condition here between coutAdmins() and setAdminPrivileges()
+        if( SAA.countAdmins.get() > 0 ){
+            Bootbox.alert({
+                title: pwixI18n.label( I18N, 'confirm.title' ),
+                message: pwixI18n.label( I18N, 'confirm.another_admin' )
+            });
+        } else {
+            setAdminPrivileges( data.email );
+        }
     }
 }
 
@@ -80,26 +76,28 @@ function _bootbox_ack(){
 }
 
 function onUserCreated( event, data ){
-    // clear the current panel
-    AccountsUI.clearPanel();
+    if( SAA.countAdmins.get() === 0 ){
+        // clear the current panel
+        AccountsUI.clearPanel();
 
-    if( SAA._conf.requireVerifiedEmail ){
-        // reminder that the email needs to be verified
-        Bootbox.alert({
-            title: pwixI18n.label( I18N, 'confirm.title' ),
-            message: pwixI18n.label( I18N, 'confirm.required' ),
-            cb: _bootbox_ack
-        });
-        // temporarily modify the pwix:accounts-ui configuration to set our own values
-        SAA._setOptions();
-        // set our waiting flag
-        SAA.waitForEmailVerification( true );
-    } else {
-        self.$( '.acUserLogin' ).hide();
-        FlowRouter.go( '/' );
-        setAdminPrivileges( data.options.email );
+        if( SAA._conf.requireVerifiedEmail ){
+            // reminder that the email needs to be verified
+            Bootbox.alert({
+                title: pwixI18n.label( I18N, 'confirm.title' ),
+                message: pwixI18n.label( I18N, 'confirm.required' ),
+                cb: _bootbox_ack
+            });
+            // temporarily modify the pwix:accounts-ui configuration to set our own values
+            SAA._setOptions();
+            // set our waiting flag
+            SAA.waitForEmailVerification( true );
+        } else {
+            self.$( '.acUserLogin' ).hide();
+            FlowRouter.go( '/' );
+            setAdminPrivileges( data.options.email );
+        }
     }
 }
 
-$( document ).on( 'ac-user-created-event', onUserCreated );
-$( document ).on( 'ac-user-verifieddone-event', onEmailVerified );
+document.addEventListener( 'ac-user-created-event', onUserCreated );
+document.addEventListener( 'ac-user-verifieddone-event', onEmailVerified );

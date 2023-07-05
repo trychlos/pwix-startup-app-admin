@@ -3,8 +3,6 @@
  *
  * As soon as the account is created, and every initialization time, override pwix:accounts-ui configuration
  * to set our own values.
- *
- * Do not display anything while waiting for the email verification (see saaCreate template)
  */
 
 import { AccountsUI } from 'meteor/pwix:accounts-ui';

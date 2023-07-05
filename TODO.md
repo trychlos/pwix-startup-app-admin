@@ -15,8 +15,6 @@
 |   17 | 2023- 7- 5 | be verbose for countAdmins |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
-|   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
-|   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
 |   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
 |   24 |  |  |
@@ -67,6 +65,10 @@
 |      | 2023- 7- 5 | the message is reviewed to better suit the workflow |
 |   16 | 2023- 7- 4 | _setOptions() doesn't display the right message when an email is verified |
 |      | 2023- 7- 5 | the setOptions() dynamic is reviewed |
+|   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
+|      | 2023- 7- 5 | fixed when errors are removed |
+|   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
+|      | 2023- 7- 5 | fixed pwix:modal stack management |
 
 ---
 P. Wieser

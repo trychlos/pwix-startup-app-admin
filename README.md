@@ -128,6 +128,22 @@ The globally exported object.
 
     Value is 'APP_ADMIN'.
 
+### Maintainer notes
+
+`pwix:startup-app-admin` package implements a workflow:
+
+- first phase is when there is not yet any admin and no user has been created through our panel
+
+    a `signup` panel is displayed and let define a new account
+
+- second phase is when there is not yet any admin, and at least one account has been created through our panel; we are here waiting for an email verification
+
+    the `signup` panel is hidden, and replaced with a clickable message box; when the box is clicked, then the `signup` panel is show again, letting a new account be defined
+
+- third phase is when a first email is verified
+
+    the first email verification set the administrator role to the relevant account; the corresponding helper (see [In template.js](#in-template-js)) should activate itself and display the normal content. Starting from this moment, this package becomes inactive.
+
 ## NPM peer dependencies
 
 Starting with v 1.1.0, and in accordance with advices from [the Meteor Guide](https://guide.meteor.com/writing-atmosphere-packages.html#npm-dependencies), we no more hardcode NPM dependencies in the `Npm.depends` clause of the `package.js`. 
