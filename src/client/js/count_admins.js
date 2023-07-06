@@ -17,11 +17,11 @@ const _Counts = new Mongo.Collection( 'CountByRole' );
 
 Meteor.startup(() => {
     _handle = Meteor.subscribe( 'pwixRoles.countByRole', SAA._conf.adminRole );
-    console.debug( 'subscribing' );
 
     Tracker.autorun(() => {
         if( _handle.ready()){
             const count = _Counts.findOne( SAA._conf.adminRole ).count;
+            console.debug( 'CountByRole fetch', _Counts.find().fetch());
             console.log( 'countAdmins', count );
             SAA.countAdmins.set( count );
         }

@@ -6,6 +6,7 @@
  */
 
 import { AccountsUI } from 'meteor/pwix:accounts-ui';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { Tracker } from 'meteor/tracker';
 
 // ask to AccountsUI to push the onVerifiedEmail configuration, replacing with the one provided
@@ -13,7 +14,7 @@ import { Tracker } from 'meteor/tracker';
 SAA._setOptions = function(){
     // callback function
     const _cb = function(){
-        location.reload();
+        FlowRouter.go( '/' );
     };
     // code
     const count = AccountsUI.saveOnce( 'onVerifiedEmail' );
@@ -33,7 +34,7 @@ Meteor.startup(() => {
 
 // restore the original pwix:accounts-ui configuration as soon as we get an administrator
 Tracker.autorun(() => {
-    if( SAA.countAdmins.get() > 0 ){
+    if( SAA.countAdmins.get() > 0 && SAA.waitForEmailVerification()){
         const count = AccountsUI.restore( 'onVerifiedEmail' );
         console.debug( 'restore', count );
         SAA.waitForEmailVerification( false );

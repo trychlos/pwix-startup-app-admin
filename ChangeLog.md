@@ -14,6 +14,7 @@
     - Upgrade pwix:bootbox version requirement to get Bootbox export
     - Rename globally exported pwixSAA to SAA (bumping candidate version number)
     - Reorganize constants to not pollute global space
+    - Remove event handlers when no more needed (todo #21)
 
 ### 1.1.1
 

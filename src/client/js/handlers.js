@@ -5,8 +5,10 @@
 import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { Bootbox } from 'meteor/pwix:bootbox';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Tracker } from 'meteor/tracker';
 
 function setAdminPrivileges( email ){
+    console.debug( 'setAdminPrivileges', email );
     Meteor.call( 'pwixRoles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
         if( err ){
             console.error( err );
@@ -77,11 +79,12 @@ function _bootbox_ack(){
 
 function onUserCreated( event, data ){
     if( SAA.countAdmins.get() === 0 ){
+
         // clear the current panel
         AccountsUI.clearPanel();
 
+        // reminder that the email needs to be verified
         if( SAA._conf.requireVerifiedEmail ){
-            // reminder that the email needs to be verified
             Bootbox.alert({
                 title: pwixI18n.label( I18N, 'confirm.title' ),
                 message: pwixI18n.label( I18N, 'confirm.required' ),
@@ -91,13 +94,21 @@ function onUserCreated( event, data ){
             SAA._setOptions();
             // set our waiting flag
             SAA.waitForEmailVerification( true );
+
+        // or just go to the application
         } else {
-            self.$( '.acUserLogin' ).hide();
-            FlowRouter.go( '/' );
             setAdminPrivileges( data.options.email );
+            FlowRouter.go( '/' );
         }
     }
 }
 
-document.addEventListener( 'ac-user-created-event', onUserCreated );
-document.addEventListener( 'ac-user-verifieddone-event', onEmailVerified );
+$( document ).on( 'ac-user-created-event.pwixStartupAppAdmin', onUserCreated );
+$( document ).on( 'ac-user-verifieddone-event.pwixStartupAppAdmin', onEmailVerified );
+
+Tracker.autorun(() => {
+    if( SAA.countAdmins.get() > 0 ){
+        console.debug( 'remove event listeners' );
+        $( document ).off( '.pwixStartupAppAdmin' );
+    }
+});

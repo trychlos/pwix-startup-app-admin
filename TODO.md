@@ -15,9 +15,9 @@
 |   17 | 2023- 7- 5 | be verbose for countAdmins |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
-|   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
-|   24 |  |  |
+|   24 | 2023- 7- 5 | 'no close at the moment' message after ack of user creation - stack trace is functions:62 ac_render_modal:43 bootbox_ack:handlers:76 md-close:bb_dialog:130 |
+|   25 |  |  |
 
 ---
 ## Done
@@ -69,6 +69,8 @@
 |      | 2023- 7- 5 | fixed when errors are removed |
 |   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
 |      | 2023- 7- 5 | fixed pwix:modal stack management |
+|   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
+|      | 2023- 7- 6 | done (i hope) will need a user manager to assert that |
 
 ---
 P. Wieser

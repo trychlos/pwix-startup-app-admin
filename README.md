@@ -136,13 +136,25 @@ The globally exported object.
 
     a `signup` panel is displayed and let define a new account
 
+    while `countAdmins` reactive var is zero, we set event listeners to handle user creation and email verification events
+
+    on each user creation, the event handler set the `waitForEmailVerification` flag on local storage; this variable is built as a reactive data source
+
+    also, on each user creation, the same event handler reset the `hideComponent` reactive var to re-display the clickable message box
+
 - second phase is when there is not yet any admin, and at least one account has been created through our panel; we are here waiting for an email verification
 
     the `signup` panel is hidden, and replaced with a clickable message box; when the box is clicked, then the `signup` panel is show again, letting a new account be defined
 
 - third phase is when a first email is verified
 
-    the first email verification set the administrator role to the relevant account; the corresponding helper (see [In template.js](#in-template-js)) should activate itself and display the normal content. Starting from this moment, this package becomes inactive.
+    the first email verification set the administrator role to the relevant account; the corresponding helper (see [In template.js](#in-template-js)) should activate itself and display the normal content. Starting from this moment, this package becomes inactive
+
+    as `countAdmins` is set via a publication subscription, it is reactive and the template helper is expected to react accordingly
+
+    as `countAdmins` is now greater than zero, we remove and no more set event listeners
+
+    the email verification handler set the admin role for the user, and remove the `waitForEmailVerification` flag on local storage
 
 ## NPM peer dependencies
 
