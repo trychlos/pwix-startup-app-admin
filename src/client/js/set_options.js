@@ -27,7 +27,8 @@ SAA._setOptions = function(){
 
 // wait for the package configuration be done
 Meteor.startup(() => {
-    if( SAA._conf.requireVerifiedEmail && SAA.countAdmins.get() === 0 ){
+    console.debug( 'SAA._conf.requireVerifiedEmail', SAA._conf.requireVerifiedEmail, 'countAdmins', SAA.countAdmins.get());
+    if( SAA._conf.requireVerifiedEmail && SAA.countAdmins.get() <= 0 ){
         SAA._setOptions();
     }
 });

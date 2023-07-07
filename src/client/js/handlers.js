@@ -37,7 +37,7 @@ function setAdminPrivileges( email ){
     }
  */
 function onEmailVerified( event, data ){
-    //console.debug( arguments );
+    console.debug( 'onEmailVerified', arguments );
     //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
     //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
     if( SAA._conf.requireVerifiedEmail && SAA.waitForEmailVerification()){
@@ -90,8 +90,6 @@ function onUserCreated( event, data ){
                 message: pwixI18n.label( I18N, 'confirm.required' ),
                 cb: _bootbox_ack
             });
-            // temporarily modify the pwix:accounts-ui configuration to set our own values
-            SAA._setOptions();
             // set our waiting flag
             SAA.waitForEmailVerification( true );
 
@@ -103,6 +101,7 @@ function onUserCreated( event, data ){
     }
 }
 
+console.debug( 'adding event listeners' );
 $( document ).on( 'ac-user-created-event.pwixStartupAppAdmin', onUserCreated );
 $( document ).on( 'ac-user-verifieddone-event.pwixStartupAppAdmin', onEmailVerified );
 

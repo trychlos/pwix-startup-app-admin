@@ -148,11 +148,11 @@ The globally exported object.
 
 - third phase is when a first email is verified
 
-    the first email verification set the administrator role to the relevant account; the corresponding helper (see [In template.js](#in-template-js)) should activate itself and display the normal content. Starting from this moment, this package becomes inactive
+    the first email verification set the administrator role to the relevant account; the corresponding main application template helper (see [In template.js](#in-template-js)) should activate itself and display the normal content. Starting from this moment, this package becomes inactive
 
     as `countAdmins` is set via a publication subscription, it is reactive and the template helper is expected to react accordingly
 
-    as `countAdmins` is now greater than zero, we remove and no more set event listeners
+    as `countAdmins` is now greater than zero, we remove event listeners
 
     the email verification handler set the admin role for the user, and remove the `waitForEmailVerification` flag on local storage
 
