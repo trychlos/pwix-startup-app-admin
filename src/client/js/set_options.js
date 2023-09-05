@@ -17,8 +17,7 @@ SAA._setOptions = function(){
         FlowRouter.go( '/' );
     };
     // code
-    const count = AccountsUI.saveOnce( 'onVerifiedEmail' );
-    console.debug( 'saveOnce', count );
+    AccountsUI.saveOnce( 'onVerifiedEmail' );
     // override the pwix:accounts-ui configuration to display our own message when there will be a new admin
     AccountsUI.opts().onVerifiedEmailTitle({ namespace: I18N, i18n: 'confirm.title' });
     AccountsUI.opts().onVerifiedEmailMessage({ namespace: I18N, i18n: 'confirm.permsgot' });
@@ -27,7 +26,9 @@ SAA._setOptions = function(){
 
 // wait for the package configuration be done
 Meteor.startup(() => {
-    console.debug( 'SAA._conf.requireVerifiedEmail', SAA._conf.requireVerifiedEmail, 'countAdmins', SAA.countAdmins.get());
+    if( SAA._conf.verbosity & SAA.C.Verbose.STATUS ){
+        console.log( 'pwix:startup-app-admin SAA._conf.requireVerifiedEmail', SAA._conf.requireVerifiedEmail, 'countAdmins', SAA.countAdmins.get());
+    }
     if( SAA._conf.requireVerifiedEmail && SAA.countAdmins.get() <= 0 ){
         SAA._setOptions();
     }
@@ -36,8 +37,7 @@ Meteor.startup(() => {
 // restore the original pwix:accounts-ui configuration as soon as we get an administrator
 Tracker.autorun(() => {
     if( SAA.countAdmins.get() > 0 && SAA.waitForEmailVerification()){
-        const count = AccountsUI.restore( 'onVerifiedEmail' );
-        console.debug( 'restore', count );
+        AccountsUI.restore( 'onVerifiedEmail' );
         SAA.waitForEmailVerification( false );
     }
 });

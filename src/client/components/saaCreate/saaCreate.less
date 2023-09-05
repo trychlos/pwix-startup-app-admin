@@ -1,16 +1,36 @@
 /*
  * pwix:startup-app-admin/src/client/components/saaCreate/saaCreate.less
+ *
+ * The application is expected to make sure we have a whole (width+height) div to display ourselves.
+ * We want center horizontally and vertically.
  */
 
 @import "{pwix:layout}/src/client/stylesheets/layout.less";
 
-.saaCreate.w-resp-50 {
-    width: 100%;
-    @media screen and ( min-width: @ui-md-width ){
-        width: 75%;
+.saaCreate {
+    // a small margin, even on XS displays
+    --saa-padding: calc( var( --x-resp-5-1-5 ) * 0.25em );
+
+    // we want the width of the panel be responsive (all the available space on small screens, but with margins on larger displays)
+    --saa-width: calc( var( --x-resp-lg-15-1 ) / 1.5 * 100% );
+
+    // horizontally and vertically positionning
+    .saa-outer {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
     }
-    @media screen and ( min-width: @ui-lg-width ){
-        width: 50%;
+    .saa-middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .saa-inner {
+        margin: auto;
+        padding: var( --saa-padding );
+        width: var( --saa-width );
     }
 }
 

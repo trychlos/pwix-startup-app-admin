@@ -15,18 +15,18 @@ SAA.countAdmins = new ReactiveVar( -1 );
 const _Counts = new Mongo.Collection( 'CountByRole' );
 
 Meteor.startup(() => {
-    Meteor.subscribe( 'pwixRoles.countByRole', SAA._conf.adminRole, () => {
-        Tracker.autorun(() => {
-            const count = _Counts.findOne({ role: SAA._conf.adminRole }).count;
-            console.debug( 'CountByRole fetch', _Counts.find().fetch());
-            console.log( 'countAdmins', count );
+    const handle = Meteor.subscribe( 'pwixRoles.countByRole', SAA._conf.adminRole );
+    Tracker.autorun(() => {
+        if( handle.ready()){
+            const count = _Counts.find({ role: SAA._conf.adminRole }).fetch()[0].count;
             SAA.countAdmins.set( count );
-        });
+        }
     });
 });
 
 Tracker.autorun(() => {
+    const count = SAA.countAdmins.get();
     if( SAA._conf.verbosity & SAA.C.Verbose.COUNTS ){
-        console.debug( 'pwix:startup-app-admin countAdmins', SAA.countAdmins.get());
+        console.log( 'pwix:startup-app-admin countAdmins', count );
     }
 });

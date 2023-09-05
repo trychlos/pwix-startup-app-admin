@@ -9,7 +9,7 @@ SAA._conf = {};
 SAA._defaults = {
     adminRole: SAA.C.Admin.ROLE,
     requireVerifiedEmail: true,
-    verbosity: SAA.C.Verbose.NONE
+    verbosity: 65535 //SAA.C.Verbose.NONE
 };
 
 /**

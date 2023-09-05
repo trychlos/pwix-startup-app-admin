@@ -15,6 +15,8 @@
     - Rename globally exported pwixSAA to SAA (bumping candidate version number)
     - Reorganize constants to not pollute global space
     - Remove event handlers when no more needed (todo #21)
+    - Bump pwix:accounts-ui requirement to get rid of pwix:cookie-manager#26
+    - Make the package auto-align itself inside of the provided parent div
 
 ### 1.1.1
 

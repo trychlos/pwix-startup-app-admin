@@ -28,7 +28,7 @@ function configure( api ){
     api.use( 'blaze-html-templates@2.0.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:accounts-ui@1.2.2' );
+    api.use( 'pwix:accounts-ui@1.3.0' );
     api.use( 'pwix:bootbox@1.5.0' );
     api.use( 'pwix:layout@1.3.0' );
     api.use( 'pwix:roles@1.0.1' );

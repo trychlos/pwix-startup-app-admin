@@ -4,7 +4,7 @@
 
 SAA.C = {
 
-    // admin role
+    // default admin role
     Admin: {
         ROLE: 'APP_ADMIN'
     },
@@ -13,14 +13,11 @@ SAA.C = {
     Verbose: {
         NONE: 0,
         CONFIGURE: 0x01 <<  0,
-        COUNTS:    0x01 <<  1
-    },
-
-    // workflow phases
-    Workflow: {
-        CREATE: 'CREATE',
-        WAITING: 'WAITING',
-        DONE: 'DONE'
+        COUNTS:    0x01 <<  1,
+        HANDLERS:  0x01 <<  2,
+        HIDECOMP:  0x01 <<  3,
+        WAITING:   0x01 <<  4,
+        STATUS:    0x01 <<  5
     }
 };
 

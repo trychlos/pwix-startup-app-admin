@@ -35,5 +35,8 @@ SAA.waitForEmailVerification = function( flag ){
 };
 
 Tracker.autorun(() => {
-    console.debug( 'waitForEmailVerification', SAA.waitForEmailVerification());
+    const wait = SAA.waitForEmailVerification();
+    if( SAA._conf.verbosity & SAA.C.Verbose.WAITING ){
+        console.log( 'pwix:startup-app-admin waitForEmailVerification', wait );
+    }
 });
