@@ -5,6 +5,7 @@
 import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { Bootbox } from 'meteor/pwix:bootbox';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { pwixI18n } from 'meteor/pwix:i18n';
 import { Tracker } from 'meteor/tracker';
 
 function setAdminPrivileges( email ){
