@@ -11,7 +11,6 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   15 | 2023- 7- 4 | Bump pwix:accounts-ui to 1.3.0 (when released) |
 |   17 | 2023- 7- 5 | be verbose for countAdmins |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
@@ -20,6 +19,7 @@
 |   25 | 2023- 9- 5 | review the top text of the main panel where the 'application' word appears twice |
 |   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
 |      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
+|      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
 |   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
 |   28 |  |  |
 
@@ -67,6 +67,8 @@
 |      | 2023- 6-23 | done |
 |   14 | 2023- 6-22 | The end (And voilà,....) should only be displayed after the user has created his account) - click sign-up, display the message, click another button to go on |
 |      | 2023- 7- 5 | the message is reviewed to better suit the workflow |
+|   15 | 2023- 7- 4 | Bump pwix:accounts-ui to 1.3.0 (when released) |
+|      | 2023- 9- 5 | done |
 |   16 | 2023- 7- 4 | _setOptions() doesn't display the right message when an email is verified |
 |      | 2023- 7- 5 | the setOptions() dynamic is reviewed |
 |   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
