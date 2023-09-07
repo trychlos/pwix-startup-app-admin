@@ -17,6 +17,7 @@
     - Remove event handlers when no more needed (todo #21)
     - Bump pwix:accounts-ui requirement to get rid of pwix:cookie-manager#26
     - Make the package auto-align itself inside of the provided parent div
+    - Change the default admin role to APP_ADMINISTRATOR
 
 ### 1.1.1
 

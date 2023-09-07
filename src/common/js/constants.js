@@ -6,7 +6,7 @@ SAA.C = {
 
     // default admin role
     Admin: {
-        ROLE: 'APP_ADMIN'
+        ROLE: 'APP_ADMINISTRATOR'
     },
 
     // verbosity levels
