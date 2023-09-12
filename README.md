@@ -126,7 +126,7 @@ The globally exported object.
 
     The name of the application admin role.
 
-    Value is 'APP_ADMIN'.
+    Value is 'APP_ADMINISTRATOR'.
 
 ### Maintainer notes
 

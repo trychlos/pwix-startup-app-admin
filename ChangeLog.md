@@ -18,6 +18,7 @@
     - Bump pwix:accounts-ui requirement to get rid of pwix:cookie-manager#26
     - Make the package auto-align itself inside of the provided parent div
     - Change the default admin role to APP_ADMINISTRATOR
+    - Meteor requirement is back to 2.9.0
 
 ### 1.1.1
 
