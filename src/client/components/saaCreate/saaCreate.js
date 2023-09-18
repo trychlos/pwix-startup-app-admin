@@ -10,8 +10,19 @@ import './saaCreate.html';
 import './saaCreate.less';
 
 Template.saaCreate.helpers({
+
+    // internationalization
+    i18n( opt ){
+        return pwixI18n.label( I18N, opt.hash.key );
+    },
+
+    // whether to show the acUserLogin component ?
+    hideComponent( opt ){
+        return SAA._hideComponent.get();
+    },
+
     // the acUserLogin component args
-    args(){
+    parmsUserLogin(){
         let one = pwixI18n.label( I18N, 'signup.text_one' );
         if( SAA._conf.requireVerifiedEmail ){
             one += pwixI18n.label( I18N, 'signup.one_verified' );
@@ -37,16 +48,6 @@ Template.saaCreate.helpers({
                 resetLink: false
             }
         };
-    },
-
-    // internationalization
-    i18n( opt ){
-        return pwixI18n.label( I18N, opt.hash.key );
-    },
-
-    // whether to show the acUserLogin component ?
-    hideComponent( opt ){
-        return SAA._hideComponent.get();
     }
 });
 

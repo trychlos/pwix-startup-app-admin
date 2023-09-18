@@ -21,7 +21,8 @@
 |      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
 |      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
 |   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
-|   28 |  |  |
+|   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |
+|   29 |  |  |
 
 ---
 ## Done
