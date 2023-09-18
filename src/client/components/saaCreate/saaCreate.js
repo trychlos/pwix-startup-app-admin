@@ -34,10 +34,10 @@ Template.saaCreate.helpers({
         return {
             ... Template.currentData(),
             ... {
-                loggedButtonAction: AC_ACT_HIDDEN,
-                unloggedButtonAction: AC_ACT_HIDDEN,
-                initialPanel: AC_PANEL_SIGNUP,
-                renderMode: AC_RENDER_DIV,
+                loggedButtonAction: AccountsUI.C.Button.HIDDEN,
+                unloggedButtonAction: AccountsUI.C.Button.HIDDEN,
+                initialPanel: AccountsUI.C.Panel.SIGNUP,
+                renderMode: AccountsUI.C.Render.DIV,
                 haveCancelButton: false,
                 signupLegendEmail: pwixI18n.label( I18N, 'signup.email_legend' ),
                 signupLegendPassword: pwixI18n.label( I18N, 'signup.password_legend' ),
