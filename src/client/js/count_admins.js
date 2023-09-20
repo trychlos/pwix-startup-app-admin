@@ -15,7 +15,7 @@ SAA.countAdmins = new ReactiveVar( -1 );
 const _Counts = new Mongo.Collection( 'CountByRole' );
 
 Meteor.startup(() => {
-    const handle = Meteor.subscribe( 'pwixRoles.countByRole', SAA._conf.adminRole );
+    const handle = Meteor.subscribe( 'Roles.countByRole', SAA._conf.adminRole );
     Tracker.autorun(() => {
         if( handle.ready()){
             const count = _Counts.find({ role: SAA._conf.adminRole }).fetch()[0].count;

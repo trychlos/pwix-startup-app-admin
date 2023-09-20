@@ -12,7 +12,7 @@ function setAdminPrivileges( email ){
     if( SAA._conf.verbosity & SAA.C.Verbose.HANDLERS ){
         console.log( 'pwix:startup-app-admin setAdminPrivileges', email );
     }
-    Meteor.call( 'pwixRoles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
+    Meteor.call( 'Roles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
         if( err ){
             console.error( err );
         } else {
@@ -22,7 +22,7 @@ function setAdminPrivileges( email ){
                     console.error( err );
                 } else {
                     const user = res;
-                    Meteor.call( 'pwixRoles.addUsersToRoles', user._id, SAA._conf.adminRole, ( err, res ) => {
+                    Meteor.call( 'Roles.addUsersToRoles', user._id, SAA._conf.adminRole, ( err, res ) => {
                         if( err ){
                             console.error( err );
                         }
