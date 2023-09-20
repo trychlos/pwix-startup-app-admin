@@ -24,7 +24,8 @@ SAA.configure = function( o ){
         _.merge( SAA._conf, SAA._defaults, o );
         // be verbose if asked for
         if( SAA._conf.verbosity & SAA.C.Verbose.CONFIGURE ){
-            console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
+            //console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
+            console.debug( 'pwix:startup-app-admin configure() with', o );
         }
     }
     // also acts as a getter
