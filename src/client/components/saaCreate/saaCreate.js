@@ -2,9 +2,8 @@
  * pwix:startup-app-admin/src/client/components/saaCreate/saaCreate.js
  */
 
+import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { pwixI18n } from 'meteor/pwix:i18n';
-
-import 'meteor/pwix:accounts-ui';
 
 import './saaCreate.html';
 import './saaCreate.less';
