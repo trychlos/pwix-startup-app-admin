@@ -15,10 +15,12 @@ A Meteor package (Blaze-based) template which, once added to the application, le
 #### In template.html
 
 ```
-    {{#if shouldDisplayContent }}
-        {{> your_home_page_content }}
-    {{else}}
-        {{> saaCreate (saaArgs) }}
+    {{# if isReady }}
+        {{#if shouldDisplayContent }}
+            {{> your_home_page_content }}
+        {{else}}
+            {{> saaCreate (saaArgs) }}
+        {{/if}}
     {{/if}}
 ```
 
@@ -26,6 +28,14 @@ A Meteor package (Blaze-based) template which, once added to the application, le
 
 ```
     Template.template.helpers({
+
+        // whether we have the package is used and ready to provide its data
+        //  encapsulating all the display with this test prevents Blaze flickering
+        isReady(){
+            const hasPackage = Object.keys( Package ).includes( 'pwix:startup-app-admin' );
+            const ready = hasPackage ? Package['pwix:startup-app-admin'].SAA.ready() : false;
+            return ready;
+        },
 
         // when we do not have yet an application administrator, let the user create the first one
         //  for now, at least pass the current args (which is implied nonetheless but that is explicit this way)
@@ -38,12 +48,8 @@ A Meteor package (Blaze-based) template which, once added to the application, le
         // display the normal content of the page if we do not have the pwix:startup-app-admin package, or there is already an admin
         shouldDisplayContent(){
             const hasPackage = Object.keys( Package ).includes( 'pwix:startup-app-admin' );
-            let hasAdmin = false;
-            if( hasPackage ){
-                hasAdmin = Package['pwix:startup-app-admin'].SAA.countAdmins.get() > 0;
-            }
-            const APP = Template.instance().APP;
-            return !hasPackage || hasAdmin;
+            const hasAdmin = hasPackage ? Package['pwix:startup-app-admin'].SAA.countAdmins.get() > 0 : false;
+            return hasPackage && !hasAdmin;
         }
     });
 ```
