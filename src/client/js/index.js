@@ -4,6 +4,7 @@
 
 import '../../common/js/index.js';
 
+import './blaze.js';
 import './count_admins.js';
 import './handlers.js';
 import './hide_component.js';

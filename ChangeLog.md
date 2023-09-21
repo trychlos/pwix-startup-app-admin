@@ -21,6 +21,7 @@
     - Meteor requirement is back to 2.9.0
     - Bump pwix:accounts-ui requirement to v 1.4.0
     - Define SAA.ready() new method
+    - Define saaIsReady() Blaze helper
 
 ### 1.1.1
 
