@@ -11,8 +11,20 @@ import { Tracker } from 'meteor/tracker';
  *  This count is published by pwix:roles
  *  But, because the admin role is configurable, we only can subscribe to the publication at startup
  */
+
 SAA.countAdmins = new ReactiveVar( -1 );
+
+_ready = {
+    val: false,
+    dep: new Tracker.Dependency()
+};
+
 const _Counts = new Mongo.Collection( 'CountByRole' );
+
+SAA.ready = function(){
+    _ready.dep.depend();
+    return _ready.val;
+}
 
 Meteor.startup(() => {
     const handle = Meteor.subscribe( 'Roles.countByRole', SAA._conf.adminRole );
@@ -20,6 +32,8 @@ Meteor.startup(() => {
         if( handle.ready()){
             const count = _Counts.find({ role: SAA._conf.adminRole }).fetch()[0].count;
             SAA.countAdmins.set( count );
+            _ready.val = true;
+            _ready.dep.changed();
         }
     });
 });

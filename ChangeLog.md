@@ -20,6 +20,7 @@
     - Change the default admin role to APP_ADMINISTRATOR
     - Meteor requirement is back to 2.9.0
     - Bump pwix:accounts-ui requirement to v 1.4.0
+    - Define SAA.ready() new method
 
 ### 1.1.1
 

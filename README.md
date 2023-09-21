@@ -102,6 +102,10 @@ The globally exported object.
 
     With that name, anyone is so able to provide additional translations.
 
+- `SAA.ready()`
+
+    A reactive data source which returns `false` while the admin count is not ready.
+
 ### Data
 
  - `SAA.countAdmins`
