@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.2.0-rc
+### 1.2.0
 
-    Release date: 
+    Release date: 2023-10-11
 
     - Add lodash dependency
     - configure() now acts both as a getter and a setter
@@ -43,4 +43,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, June 12th
+- Last updated on 2023, Oct. 11th
