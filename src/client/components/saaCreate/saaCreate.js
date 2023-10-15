@@ -33,6 +33,7 @@ Template.saaCreate.helpers({
         return {
             ... Template.currentData(),
             ... {
+                name: 'pwix:startup-app-admin',
                 initialDisplay: AccountsUI.C.Panel.SIGNUP,
                 renderMode: AccountsUI.C.Render.DIV,
                 haveCancelButton: false,

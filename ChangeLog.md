@@ -7,6 +7,7 @@
     Release date: 
 
     - Update according to most recent pwix:accounts-ui configuration options
+    - Name our acUserLogin instance
 
 ### 1.2.0
 
