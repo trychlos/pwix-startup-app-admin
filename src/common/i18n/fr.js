@@ -26,9 +26,9 @@ SAA.i18n = {
                     +'<p class="">Il est nécessaire de définir dès maintenant le premier administrateur de l\'application.</p>',
                 one_verified: ''
                     +'<p>Les privilèges d\'administration vous seront attribués dès que votre adresse de messagerie aura été vérifiée.</p>',
-                text_four: ''
+                text_five: ''
                     +'<p class="">Et voilà !</p>',
-                four_verified: ''
+                five_verified: ''
                     +'A la création de votre nouveau compte, vous serez automatiquement connecté, et allez recevoir notre email avec un lien de vérification. '
                     +'Il vous suffira de cliquer sur ce lien de vérification pour obtenir les privilèges d\'administration.',
                 password_legend: 'Pour des raisons de sécurité, une double saisie du mot de passe est demandée'

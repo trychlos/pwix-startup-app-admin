@@ -26,23 +26,22 @@ Template.saaCreate.helpers({
         if( SAA._conf.requireVerifiedEmail ){
             one += pwixI18n.label( I18N, 'signup.one_verified' );
         }
-        let four = pwixI18n.label( I18N, 'signup.text_four' );
+        let five = pwixI18n.label( I18N, 'signup.text_five' );
         if( SAA._conf.requireVerifiedEmail ){
-            four += pwixI18n.label( I18N, 'signup.four_verified' );
+            five += pwixI18n.label( I18N, 'signup.five_verified' );
         }
         return {
             ... Template.currentData(),
             ... {
-                loggedButtonAction: AccountsUI.C.Button.HIDDEN,
-                unloggedButtonAction: AccountsUI.C.Button.HIDDEN,
-                initialPanel: AccountsUI.C.Panel.SIGNUP,
+                initialDisplay: AccountsUI.C.Panel.SIGNUP,
                 renderMode: AccountsUI.C.Render.DIV,
                 haveCancelButton: false,
+                signupFieldset: true,
                 signupLegendEmail: pwixI18n.label( I18N, 'signup.email_legend' ),
                 signupLegendPassword: pwixI18n.label( I18N, 'signup.password_legend' ),
                 signupPasswordTwice: true,
                 signupTextOne: one,
-                signupTextFour: four,
+                signupTextFive: five,
                 signinLink: false,
                 resetLink: false
             }

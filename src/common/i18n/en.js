@@ -26,9 +26,9 @@ SAA.i18n = {
                     +'<p class="">It is time now to define the first administrator of the application.</p>',
                 one_verified: ''
                     +'<p>You will get administration privileges as soon as your email address will have been verified.</p>',
-                text_four: ''
+                text_five: ''
                     +'<p class="">And <em>voilà</em>.</p>',
-                four_verified: ''
+                five_verified: ''
                     +'<p class="">On sign up, you will be automatically connected, and will receive our mail with a verification link. '
                     +'Just click on this verification link to get administration privileges.</p>',
                 password_legend: 'For security reasons, please enter your password twice'

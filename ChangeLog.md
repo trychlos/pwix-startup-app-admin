@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Update according to most recent pwix:accounts-ui configuration options
 
 ### 1.2.0
 
