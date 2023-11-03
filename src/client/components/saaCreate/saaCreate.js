@@ -16,7 +16,7 @@ Template.saaCreate.helpers({
     },
 
     // whether to show the acUserLogin component ?
-    hideComponent( opt ){
+    hideComponent(){
         return SAA._hideComponent.get();
     },
 
