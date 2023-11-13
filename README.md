@@ -130,6 +130,8 @@ The globally exported object.
 
     All passed-in arguments will be directly passed to `acUserLogin` underlying component.
 
+    Also accepts an `image` url to be displayed besides of the form.
+
 ### Constants
 
 - `SAA.C.Admin.ROLE`

@@ -9,7 +9,7 @@ SAA.i18n = {
             alt: {
                 text: ''
                     +'<p>Waiting for an email address be verified...</p>'
-                    +'<p>Click here if you want try to define another account candidate to application administration.</p>'
+                    +'<p>Click here if you want to define another account candidate to application administration.</p>'
             },
             confirm: {
                 title: 'Administrator creation',

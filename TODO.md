@@ -20,8 +20,6 @@
 |   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
 |      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
 |      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
-|   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
-|   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |
 |   29 |  |  |
 
 ---
@@ -78,6 +76,10 @@
 |      | 2023- 7- 5 | fixed pwix:modal stack management |
 |   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
 |      | 2023- 7- 6 | done (i hope) will need a user manager to assert that |
+|   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
+|      | 2023-11-13 | done |
+|   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |
+|      | 2023-11-13 | cancelled as our helpers have to test for package presence first |
 
 ---
 P. Wieser

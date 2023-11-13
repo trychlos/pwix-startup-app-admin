@@ -5,11 +5,16 @@
             <div class="saa-middle">
                 <div class="saa-inner">
 
-                    {{#if hideComponent }}
-                        <button class="btn btn-md btn-outline-secondary js-show">{{{ i18n key="alt.text" }}}</button>
-                    {{else}}
-                        {{> acUserLogin (parmsUserLogin) }}
-                    {{/if}}
+                    <div class="d-flex justify-content-evenly align-items-center">
+                        {{#if hideComponent }}
+                            <button class="btn btn-md btn-outline-secondary js-show">{{{ i18n key="alt.text" }}}</button>
+                        {{else}}
+                            {{#if haveImage }}
+                                <img src="{{ image }}" />
+                            {{/if}}
+                            {{> acUserLogin (parmsUserLogin) }}
+                        {{/if}}
+                    </div>
 
                 </div>
             </div>

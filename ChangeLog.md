@@ -2,12 +2,14 @@
 
 ## ChangeLog
 
-### 1.2.1-rc
+### 1.3.0-rc
 
     Release date: 
 
     - Update according to most recent pwix:accounts-ui configuration options
     - Name our acUserLogin instance
+    - Add 'image' parameter to saaCreate component (bumping candidate version number)
+    - Fix secondary panel message (todo #27)
 
 ### 1.2.0
 

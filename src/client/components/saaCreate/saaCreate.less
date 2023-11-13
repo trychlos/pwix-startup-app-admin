@@ -11,9 +11,6 @@
     // a small margin, even on XS displays
     --saa-padding: calc( var( --x-resp-5-1-5 ) * 0.25em );
 
-    // we want the width of the panel be responsive (all the available space on small screens, but with margins on larger displays)
-    --saa-width: calc( var( --x-resp-lg-15-1 ) / 1.5 * 100% );
-
     // horizontally and vertically positionning
     .saa-outer {
         display: table;
@@ -28,9 +25,13 @@
         vertical-align: middle;
     }
     .saa-inner {
-        margin: auto;
         padding: var( --saa-padding );
-        width: var( --saa-width );
+        img {
+            width: 25%;
+        }
+        .acUserLogin {
+            width: 40%;
+        }
     }
 }
 

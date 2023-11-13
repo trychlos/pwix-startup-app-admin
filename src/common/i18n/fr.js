@@ -9,7 +9,7 @@ SAA.i18n = {
             alt: {
                 text: ''
                     +'<p>En attente de la vérification d\'une adresse de messagerie...</p>'
-                    +'<p>Cliquez ici si vous souhaitez essayer de définir un nouveau compte candidat au privil-ge d\'administration.</p>'
+                    +'<p>Cliquez ici si vous souhaitez définir un nouveau compte candidat au privilège d\'administration.</p>'
             },
             confirm: {
                 title: 'Création du rôle Administrateur',
