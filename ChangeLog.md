@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.3.0-rc
+### 1.3.0
 
-    Release date: 
+    Release date: 2024- 5-29
 
     - Update according to most recent pwix:accounts-ui configuration options
     - Name our acUserLogin instance
@@ -53,4 +53,4 @@
 
 ---
 P. Wieser
-- Last updated on 2023, Oct. 11th
+- Last updated on 2024, May. 29th
