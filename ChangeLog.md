@@ -10,6 +10,7 @@
     - Name our acUserLogin instance
     - Add 'image' parameter to saaCreate component (bumping candidate version number)
     - Fix secondary panel message (todo #27)
+    - Meteor 3.0 ready
 
 ### 1.2.0
 

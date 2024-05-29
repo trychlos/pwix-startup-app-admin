@@ -23,16 +23,16 @@ Package.onTest( function( api ){
 });
 
 function configure( api ){
-    api.versionsFrom( '2.9.0' );
-    api.use( 'alanning:roles@3.4.0' );
-    api.use( 'blaze-html-templates@2.0.0', 'client' );
+    api.versionsFrom([ '2.9.0', '3.0-rc.0' ]);
+    api.use( 'alanning:roles@3.4.0 || 4.0.0-alpha.0' );
+    api.use( 'blaze-html-templates@2.0.0 || 3.0.0-alpha300.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:accounts-ui@1.3.0' );
-    api.use( 'pwix:bootbox@1.5.0' );
-    api.use( 'pwix:layout@1.3.0' );
-    api.use( 'pwix:roles@1.0.1' );
-    api.use( 'tmeasday:check-npm-versions@1.0.2', 'server' );
+    api.use( 'pwix:accounts-ui@1.5.0' );
+    api.use( 'pwix:bootbox@1.5.5' );
+    api.use( 'pwix:layout@1.3.1' );
+    api.use( 'pwix:roles@1.3.0' );
+    api.use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
     api.addFiles( 'src/client/components/saaCreate/saaCreate.js', 'client' );
 }
 
