@@ -11,31 +11,14 @@
     // a small margin, even on XS displays
     --saa-padding: calc( var( --x-resp-5-1-5 ) * 0.25em );
 
-    // horizontally and vertically positionning
-    .saa-outer {
-        display: table;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+    img {
+        width: 25%;
     }
-    .saa-middle {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .saa-inner {
-        padding: var( --saa-padding );
-        img {
-            width: 25%;
-        }
-        .acUserLogin {
-            width: 40%;
-        }
-    }
-}
 
-.saaCreate {
+    .acUserLogin {
+        width: 40%;
+    }
+
     .js-show {
         line-height: 200%;
         padding: 1em 2em;

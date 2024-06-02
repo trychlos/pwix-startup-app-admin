@@ -1,23 +1,15 @@
 <template name="saaCreate">
-    <div class="saaCreate">
+    <div class="saaCreate d-flex flex-row ca-h100 align-items-center">
 
-        <div class="saa-outer">
-            <div class="saa-middle">
-                <div class="saa-inner">
-
-                    <div class="d-flex justify-content-evenly align-items-center">
-                        {{#if hideComponent }}
-                            <button class="btn btn-md btn-outline-secondary js-show">{{{ i18n key="alt.text" }}}</button>
-                        {{else}}
-                            {{#if haveImage }}
-                                <img src="{{ image }}" />
-                            {{/if}}
-                            {{> acUserLogin (parmsUserLogin) }}
-                        {{/if}}
-                    </div>
-
-                </div>
-            </div>
+        <div class="d-flex justify-content-evenly align-items-center">
+            {{#if hideComponent }}
+                <button class="btn btn-md btn-outline-secondary js-show">{{{ i18n key="alt.text" }}}</button>
+            {{else}}
+                {{#if haveImage }}
+                    <img src="{{ image }}" />
+                {{/if}}
+                {{> acUserLogin (parmsUserLogin) }}
+            {{/if}}
         </div>
 
     </div>

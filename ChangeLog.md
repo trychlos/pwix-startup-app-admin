@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Simplify both HTML layout and Less stylesheet, while keeping both horizontal and vertical centerings
 
 ### 1.3.0
 
