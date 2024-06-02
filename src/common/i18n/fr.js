@@ -23,7 +23,7 @@ SAA.i18n = {
                 text_one: ''
                     +'<p class="">Bonjour,</p>'
                     +'<p class="">C\'est le premier lancement de votre application. Merci de votre confiance.</p>'
-                    +'<p class="">Il est nécessaire de définir dès maintenant le premier administrateur de l\'application.</p>',
+                    +'<p class="">Il est dès maintenant temps de définir son premier administrateur.</p>',
                 one_verified: ''
                     +'<p>Les privilèges d\'administration vous seront attribués dès que votre adresse de messagerie aura été vérifiée.</p>',
                 text_five: ''

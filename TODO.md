@@ -11,12 +11,10 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |    5 | 2023- 6- 7 | Customize the email verification email |
-|   17 | 2023- 7- 5 | be verbose for countAdmins |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
 |   24 | 2023- 7- 5 | 'no close at the moment' message after ack of user creation - stack trace is functions:62 ac_render_modal:43 bootbox_ack:handlers:76 md-close:bb_dialog:130 |
-|   25 | 2023- 9- 5 | review the top text of the main panel where the 'application' word appears twice |
 |   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
 |      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
 |      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
@@ -70,12 +68,16 @@
 |      | 2023- 9- 5 | done |
 |   16 | 2023- 7- 4 | _setOptions() doesn't display the right message when an email is verified |
 |      | 2023- 7- 5 | the setOptions() dynamic is reviewed |
+|   17 | 2023- 7- 5 | be verbose for countAdmins |
+|      | 2024- 6- 2 | done (but do not know when) |
 |   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
 |      | 2023- 7- 5 | fixed when errors are removed |
 |   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
 |      | 2023- 7- 5 | fixed pwix:modal stack management |
 |   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
 |      | 2023- 7- 6 | done (i hope) will need a user manager to assert that |
+|   25 | 2023- 9- 5 | review the top text of the main panel where the 'application' word appears twice |
+|      | 2024- 6- 2 | done |
 |   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
 |      | 2023-11-13 | done |
 |   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |

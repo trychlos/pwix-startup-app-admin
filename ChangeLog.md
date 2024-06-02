@@ -7,6 +7,7 @@
     Release date: 
 
     - Simplify both HTML layout and Less stylesheet, while keeping both horizontal and vertical centerings
+    - Prevent a wording repetition (todo #25)
 
 ### 1.3.0
 
