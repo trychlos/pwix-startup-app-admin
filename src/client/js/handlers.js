@@ -91,6 +91,7 @@ function onUserCreated( event, data ){
             Bootbox.alert({
                 title: pwixI18n.label( I18N, 'confirm.title' ),
                 message: pwixI18n.label( I18N, 'confirm.required' ),
+                mdMoveTop: 24,
                 cb: _bootbox_ack
             });
             // set our waiting flag

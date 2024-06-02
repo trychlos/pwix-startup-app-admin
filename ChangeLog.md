@@ -8,6 +8,7 @@
 
     - Simplify both HTML layout and Less stylesheet, while keeping both horizontal and vertical centerings
     - Prevent a wording repetition (todo #25)
+    - Slightly move the confirmation dialog down to not override the tolert (todo #26)
 
 ### 1.3.0
 

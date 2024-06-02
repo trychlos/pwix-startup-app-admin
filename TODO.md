@@ -15,9 +15,6 @@
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
 |   24 | 2023- 7- 5 | 'no close at the moment' message after ack of user creation - stack trace is functions:62 ac_render_modal:43 bootbox_ack:handlers:76 md-close:bb_dialog:130 |
-|   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
-|      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
-|      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
 |   29 |  |  |
 
 ---
@@ -78,6 +75,10 @@
 |      | 2023- 7- 6 | done (i hope) will need a user manager to assert that |
 |   25 | 2023- 9- 5 | review the top text of the main panel where the 'application' word appears twice |
 |      | 2024- 6- 2 | done |
+|   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
+|      |            | if the two are needed and provide different informations, they should not overlap => dialog should be moved to the bottom |
+|      |            | note: this is a bootbox displayed from handlers.onUserCreated() |
+|      | 2024- 6- 2 | done, requiring pwix:modal 1.11.0-rc |
 |   27 | 2023- 9- 5 | review the text of the secondary panel: we do not want 'try', we do want define |
 |      | 2023-11-13 | done |
 |   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |
