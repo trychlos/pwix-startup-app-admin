@@ -14,8 +14,7 @@
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
-|   24 | 2023- 7- 5 | 'no close at the moment' message after ack of user creation - stack trace is functions:62 ac_render_modal:43 bootbox_ack:handlers:76 md-close:bb_dialog:130 |
-|   29 |  |  |
+|   31 | 2024- 6- 2 |  |
 
 ---
 ## Done
@@ -73,6 +72,8 @@
 |      | 2023- 7- 5 | fixed pwix:modal stack management |
 |   22 | 2023- 7- 5 | protect onCreateUser and onEmailVerified to not run when no more needed (invalid the package) |
 |      | 2023- 7- 6 | done (i hope) will need a user manager to assert that |
+|   24 | 2023- 7- 5 | 'no close at the moment' message after ack of user creation - stack trace is functions:62 ac_render_modal:43 bootbox_ack:handlers:76 md-close:bb_dialog:130 |
+|      | 2024- 6- 2 | not reproductible - closed |
 |   25 | 2023- 9- 5 | review the top text of the main panel where the 'application' word appears twice |
 |      | 2024- 6- 2 | done |
 |   26 | 2023- 9- 5 | at creation of the first admin, we send a tolert and a confirmation dialog |
@@ -83,6 +84,10 @@
 |      | 2023-11-13 | done |
 |   28 | 2023- 9-12 | provide a Blaze helper which tests for admin count |
 |      | 2023-11-13 | cancelled as our helpers have to test for package presence first |
+|   29 | 2024- 6- 2 | after user creation, we still display the saa icon (but no more the acUserLogin), disappears on dialog acknowledge |
+|      | 2024- 6- 3 | fixed in accounts-ui |
+|   30 | 2024- 6- 2 | while waiting for email verification, the text is no more horizontally centered (regression) |
+|      | 2024- 6- 3 | fixed |
 
 ---
 P. Wieser

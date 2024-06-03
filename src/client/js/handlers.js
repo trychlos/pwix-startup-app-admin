@@ -83,9 +83,6 @@ function _bootbox_ack(){
 function onUserCreated( event, data ){
     if( SAA.countAdmins.get() === 0 ){
 
-        // clear the current panel
-        AccountsUI.clearPanel( 'pwix:startup-app-admin' );
-
         // reminder that the email needs to be verified
         if( SAA._conf.requireVerifiedEmail ){
             Bootbox.alert({

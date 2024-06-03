@@ -15,7 +15,7 @@ Template.saaCreate.helpers({
         return pwixI18n.label( I18N, opt.hash.key );
     },
 
-    // whether to show an image beside of the acUserLogin ?
+    // whether to show an image besides of the acUserLogin ?
     haveImage(){
         return Object.keys( this ).includes( 'image' ) && this.image;
     },
