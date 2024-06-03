@@ -18,6 +18,21 @@ SAA.i18n = {
                     +'Please be conscious of your responsabilities, and have a good job.',
                 required: 'Though you have been successfully connected, you only will get the Administration privilege after having validated your email address.'
             },
+            email: {
+                html: '<p>Hello,</p>>'
+                +'<p>In order to get your email verified, and so gain your administrator privileges, please just clic on the below link:</p>'
+                +'<p><p>'
+                +'<p>%s<p>'
+                +'<p><p>'
+                +'<p>Thank you for your trust.<p>'
+                +'<p><p>'
+                +'<small><i>Sent from pwix:startup-app-admin</i></small>',
+                subject: 'Email address verification of the first application administrator',
+                text: 'Hello,\n'
+                    +'In order to get your email verified, and so gain your administrator privileges, please just clic on the below link:\n\n%s\n\n'
+                    +'Thank you for your trust.\n\n'
+                    +'Sent from pwix:startup-app-admin'
+            },
             signup: {
                 email_legend: 'Please enter an email address that you do control',
                 text_one: ''

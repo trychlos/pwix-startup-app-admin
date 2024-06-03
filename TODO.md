@@ -10,7 +10,6 @@
 
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
-|    5 | 2023- 6- 7 | Customize the email verification email |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
@@ -28,6 +27,8 @@
 |      | 2023- 6- 5 | done: SAA |
 |    4 | 2023- 6- 5 | Change PCK_ to PREFIX_ |
 |      | 2023- 6- 5 | done: SAA_ |
+|    5 | 2023- 6- 7 | Customize the email verification email |
+|      | 2024- 6- 3 | done |
 |    6 | 2023- 6- 7 | Have a responsive width for the display |
 |      | 2023- 6- 7 | done |
 |    7 | 2023- 6- 7 | There are too many alerts and boxes - to be decreased |

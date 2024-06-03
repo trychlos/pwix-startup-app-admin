@@ -8,6 +8,10 @@ import { pwixI18n } from 'meteor/pwix:i18n';
 import './saaCreate.html';
 import './saaCreate.less';
 
+Template.saaCreate.onRendered( function(){
+    Meteor.callAsync( 'SAA.setEmailTemplate' );
+});
+
 Template.saaCreate.helpers({
 
     // internationalization

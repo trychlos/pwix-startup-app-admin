@@ -8,29 +8,16 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { pwixI18n } from 'meteor/pwix:i18n';
 import { Tracker } from 'meteor/tracker';
 
-function setAdminPrivileges( email ){
+async function setAdminPrivileges( email ){
     if( SAA._conf.verbosity & SAA.C.Verbose.HANDLERS ){
         console.log( 'pwix:startup-app-admin setAdminPrivileges', email );
     }
-    Meteor.call( 'Roles.createRole', SAA._conf.adminRole, { unlessExists: true }, ( err, res ) => {
-        if( err ){
+    return Meteor.callAsync( 'Roles.createRole', SAA._conf.adminRole, { unlessExists: true })
+        .then(() => { return Meteor.callAsync( 'AccountsUI.byEmailAddress', email ); })
+        .then(( user ) => { return user ? Meteor.callAsync( 'Roles.addUsersToRoles', user._id, SAA._conf.adminRole ) : null; })
+        .catch(( err ) => {
             console.error( err );
-        } else {
-            //console.debug( 'role created', res );
-            Meteor.call( 'AccountsUI.byEmailAddress', email, ( err, res ) => {
-                if( err ){
-                    console.error( err );
-                } else {
-                    const user = res;
-                    Meteor.call( 'Roles.addUsersToRoles', user._id, SAA._conf.adminRole, ( err, res ) => {
-                        if( err ){
-                            console.error( err );
-                        }
-                    });
-                }
-            });
-        }
-    });
+        });
 }
 
 /*

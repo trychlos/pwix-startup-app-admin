@@ -8,6 +8,12 @@ SAA._conf = {};
 
 SAA._defaults = {
     adminRole: SAA.C.Admin.ROLE,
+    email: {
+        from: 'SAA <no-reply@trychlos.org>',
+        subject(){ return pwixI18n.label( I18N, 'email.subject' ); },
+        text: null,
+        html: null
+    },
     requireVerifiedEmail: true,
     verbosity: SAA.C.Verbose.NONE
 };

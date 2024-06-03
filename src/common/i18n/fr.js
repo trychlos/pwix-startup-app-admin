@@ -18,6 +18,21 @@ SAA.i18n = {
                 +'S\'il vous plait, soyez conscients de vos responsabilités, et faites un bon travail.',
                 required: 'Bien que vous ayez été automatiquement connecté, vous ne recevrez les privilèges d\'administration qu\' après avoir validé votre adresse de messagerie.'
             },
+            email: {
+                html: '<p>Bonjour,</p>>'
+                +'<p>Afin de valider votre adresse email, et ainsi obtenir vos privilèges d\'administration, il vous suffit de cliquer sur le lien ci-dessous:</p>'
+                +'<p><p>'
+                +'<p>%s<p>'
+                +'<p><p>'
+                +'<p>Merci de votre confiance.<p>'
+                +'<p><p>'
+                +'<small><i>Envoyé par pwix:startup-app-admin</i></small>',
+                subject: 'Vérification de l\'adresse email du premier administrateur de l\'application',
+                text: 'Bonjour,\n'
+                +'Afin de valider votre adresse email, et ainsi obtenir vos privilèges d\'administration, il vous suffit de cliquer sur le lien ci-dessous:\n\n%s\n\n'
+                +'Merci de votre confiance.\n\n'
+                +'Envoyé par pwix:startup-app-admin'
+            },
             signup: {
                 email_legend: 'Spécifiez une adresse de messagerie que vous controlez',
                 text_one: ''
