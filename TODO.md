@@ -11,7 +11,6 @@
 |   Id | Date       | Description and comment(s) |
 | ---: | :---       | :---                       |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
-|   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
 |   31 | 2024- 6- 2 |  |
 
@@ -67,6 +66,8 @@
 |      | 2023- 7- 5 | the setOptions() dynamic is reviewed |
 |   17 | 2023- 7- 5 | be verbose for countAdmins |
 |      | 2024- 6- 2 | done (but do not know when) |
+|   19 | 2023- 7- 5 | the verification dialog doesn't have title but should |
+|      | 2024- 6- 3 | it does have -> closed |
 |   20 | 2023- 7- 5 | the verification dialog is not horizontally centered but should |
 |      | 2023- 7- 5 | fixed when errors are removed |
 |   21 | 2023- 7- 5 | pwix:modal has an error message when displaying the verification dialog |
