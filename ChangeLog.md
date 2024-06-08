@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.0-rc
+### 1.4.0
 
-    Release date: 
+    Release date: 2024- 6- 8
 
     - Simplify both HTML layout and Less stylesheet, while keeping both horizontal and vertical centerings
     - Prevent a wording repetition (todo #25)
@@ -63,4 +63,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, May. 29th
+- Last updated on 2024, Jun. 8th
