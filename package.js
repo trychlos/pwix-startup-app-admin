@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:startup-app-admin',
-    version: '1.4.0',
+    version: '1.4.1-rc',
     summary: 'Force the application to start by creating an administrator',
     git: 'https://github.com/trychlos/pwix-startup-app-admin',
     documentation: 'README.md'
