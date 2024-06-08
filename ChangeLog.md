@@ -2,13 +2,14 @@
 
 ## ChangeLog
 
-### 1.3.1-rc
+### 1.4.0-rc
 
     Release date: 
 
     - Simplify both HTML layout and Less stylesheet, while keeping both horizontal and vertical centerings
     - Prevent a wording repetition (todo #25)
     - Slightly move the confirmation dialog down to not override the tolert (todo #26)
+    - Replace obsolete pwix:layout v1 with pwix:ui-layout v2 bumping minor candidate version number
 
 ### 1.3.0
 
