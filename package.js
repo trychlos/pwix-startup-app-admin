@@ -33,6 +33,7 @@ function configure( api ){
     api.use( 'pwix:modal@2.0.0' );
     api.use( 'pwix:roles@1.3.0' );
     api.use( 'pwix:ui-layout@2.0.0' );
+    api.use( 'pwix:ui-utils@1.0.0' );
     api.use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
     api.addFiles( 'src/client/components/saaCreate/saaCreate.js', 'client' );
 }
