@@ -30,7 +30,7 @@ function configure( api ){
     api.use( 'less@4.0.0', 'client' );
     api.use( 'pwix:accounts-ui@1.5.0' );
     api.use( 'pwix:bootbox@1.5.5' );
-    api.use( 'pwix:modal@2.0.0' );
+    api.use( 'pwix:modal@1.10.0 || 2.0.0' );
     api.use( 'pwix:roles@1.3.0' );
     api.use( 'pwix:ui-layout@2.0.0' );
     api.use( 'pwix:ui-utils@1.0.0' );

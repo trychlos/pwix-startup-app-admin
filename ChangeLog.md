@@ -10,7 +10,7 @@
     - Prevent a wording repetition (todo #25)
     - Slightly move the confirmation dialog down to not override the tolert (todo #26)
     - Replace obsolete pwix:layout v1 with pwix:ui-layout v2 bumping minor candidate version number
-    - Add pwix:ui-utils dependency
+    - Update dependencies, adding pwix:ui-utils, upgrading pwix:modal
 
 ### 1.3.0
 
