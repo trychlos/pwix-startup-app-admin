@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.4-rc
+### 1.4.4
 
-    Release date: 
+    Release date: 2024- 7-10
 
     - Remove superfluous log line
 
