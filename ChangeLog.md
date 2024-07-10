@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.1-rc
+### 1.4.1
 
-    Release date: 
+    Release date: 2024- 7-10
 
     - configure() is now a reactive data source
     - Take advantage of this reactivity to no more wait for startup()
@@ -70,4 +70,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jun. 8th
+- Last updated on 2024, Jul. 10th
