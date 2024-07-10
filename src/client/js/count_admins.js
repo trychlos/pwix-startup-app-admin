@@ -36,7 +36,6 @@ Tracker.autorun(() => {
     if( _ready.handle.ready()){
         const role = SAA.configure().adminRole;
         const count = _Counts.find({ role: role }).fetch()[0].count;
-        console.debug( 'count', count );
         SAA.countAdmins.set( count );
         _ready.val = true;
         _ready.dep.changed();
