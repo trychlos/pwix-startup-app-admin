@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Fix 'pwix_roles_count_by_roles' subscription
 
 ### 1.4.1
 

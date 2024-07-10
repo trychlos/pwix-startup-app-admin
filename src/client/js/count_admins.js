@@ -29,13 +29,15 @@ SAA.ready = function(){
 
 Tracker.autorun(() => {
     const role = SAA.configure().adminRole;
-    _ready.handle = Meteor.subscribe( 'Roles.countByRole', role );
+    _ready.handle = Meteor.subscribe( 'pwix_roles_count_by_roles', role );
+    console.debug( 'subscribing to', role );
 });
 
 Tracker.autorun(() => {
-    const role = SAA.configure().adminRole;
     if( _ready.handle.ready()){
+        const role = SAA.configure().adminRole;
         const count = _Counts.find({ role: role }).fetch()[0].count;
+        console.debug( 'count', count );
         SAA.countAdmins.set( count );
         _ready.val = true;
         _ready.dep.changed();
