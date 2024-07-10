@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.2-rc
+### 1.4.2
 
-    Release date: 
+    Release date: 2024- 7-10
 
     - Fix 'pwix_roles_count_by_roles' subscription
 
