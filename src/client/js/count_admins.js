@@ -30,7 +30,6 @@ SAA.ready = function(){
 Tracker.autorun(() => {
     const role = SAA.configure().adminRole;
     _ready.handle = Meteor.subscribe( 'pwix_roles_count_by_roles', role );
-    console.debug( 'subscribing to', role );
 });
 
 Tracker.autorun(() => {

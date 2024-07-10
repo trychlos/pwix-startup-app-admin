@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Remove superfluous log line
 
 ### 1.4.2
 
