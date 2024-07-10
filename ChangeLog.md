@@ -7,6 +7,7 @@
     Release date: 
 
     - configure() is now a reactive data source
+    - Take advantage of this reactivity to no more wait for startup()
 
 ### 1.4.0
 

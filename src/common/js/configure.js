@@ -32,7 +32,7 @@ SAA.configure = function( o ){
         _.merge( _conf, _defaults, o );
         SAA._conf.set( _conf );
         // be verbose if asked for
-        if( SAA._conf.verbosity & SAA.C.Verbose.CONFIGURE ){
+        if( _conf.verbosity & SAA.C.Verbose.CONFIGURE ){
             //console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
             console.debug( 'pwix:startup-app-admin configure() with', o );
         }
