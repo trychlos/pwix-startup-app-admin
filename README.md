@@ -96,6 +96,8 @@ Please note that `SAA.configure()` method should be called in the same terms bot
 
 Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `SAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
 
+`SAA.configure()` is a reactive data source.
+
 ## `SAA`
 
 The globally exported object.

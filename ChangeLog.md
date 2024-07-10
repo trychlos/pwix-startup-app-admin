@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - configure() is now a reactive data source
 
 ### 1.4.0
 

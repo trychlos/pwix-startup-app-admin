@@ -4,9 +4,11 @@
 
 import _ from 'lodash';
 
-SAA._conf = {};
+import { ReactiveVar } from 'meteor/reactive-var';
 
-SAA._defaults = {
+let _conf = {};
+
+const _defaults = {
     adminRole: SAA.C.Admin.ROLE,
     email: {
         from: 'SAA <no-reply@trychlos.org>',
@@ -15,7 +17,7 @@ SAA._defaults = {
         html: null
     },
     requireVerifiedEmail: true,
-    verbosity: SAA.C.Verbose.NONE
+    verbosity: SAA.C.Verbose.CONFIGURE
 };
 
 /**
@@ -27,7 +29,8 @@ SAA._defaults = {
  */
 SAA.configure = function( o ){
     if( o && _.isObject( o )){
-        _.merge( SAA._conf, SAA._defaults, o );
+        _.merge( _conf, _defaults, o );
+        SAA._conf.set( _conf );
         // be verbose if asked for
         if( SAA._conf.verbosity & SAA.C.Verbose.CONFIGURE ){
             //console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
@@ -35,7 +38,8 @@ SAA.configure = function( o ){
         }
     }
     // also acts as a getter
-    return SAA._conf;
+    return SAA._conf.get();
 };
 
-_.merge( SAA._conf, SAA._defaults );
+_.merge( _conf, _defaults );
+SAA._conf = new ReactiveVar( _conf );

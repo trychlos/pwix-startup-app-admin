@@ -9,7 +9,7 @@ import { Tracker } from 'meteor/tracker';
 /**
  * @summary A ReactiveVar which handles the count of app admins
  *  This count is published by pwix:roles
- *  But, because the admin role is configurable, we only can subscribe to the publication at startup
+ *  But, because the admin role is configurable, we only can subscribe to the publication ater having been configured or after startup
  */
 
 SAA.countAdmins = new ReactiveVar( -1 );
