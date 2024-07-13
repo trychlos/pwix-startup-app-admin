@@ -14,7 +14,7 @@ SAA._hideComponent = new ReactiveVar( localStorage.getItem( WAIT_FOR_VERIFICATIO
 
 Tracker.autorun(() => {
     const hide = SAA._hideComponent.get();
-    if( SAA._conf.verbosity & SAA.C.Verbose.HIDECOMP ){
+    if( SAA.configure().verbosity & SAA.C.Verbose.HIDECOMP ){
         console.log( 'pwix:startup-app-admin hideComponent', hide );
     }
 });

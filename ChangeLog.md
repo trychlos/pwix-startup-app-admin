@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - Fix methods to get reactive configuration
+    - Fix code to use new reactive configuration
     - Improve display
 
 ### 1.4.4

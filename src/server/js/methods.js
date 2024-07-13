@@ -11,7 +11,7 @@ Meteor.methods({
     async 'SAA.setEmailTemplate'(){
         //console.debug( 'initial Accounts.emailTemplates', Accounts.emailTemplates );
         if( Accounts.emailTemplates.from.match( /example\.com/ )){
-            Accounts.emailTemplates.from = SAA._conf.email.from || SAA._defaults.email.from;
+            Accounts.emailTemplates.from = SAA.configure().email.from;
         }
         let template = {};
         template.subject = SAA.configure().email.subject;

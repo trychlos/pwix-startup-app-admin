@@ -32,11 +32,11 @@ Template.saaCreate.helpers({
     // the acUserLogin component args
     parmsUserLogin(){
         let one = pwixI18n.label( I18N, 'signup.text_one' );
-        if( SAA._conf.requireVerifiedEmail ){
+        if( SAA.configure().requireVerifiedEmail ){
             one += pwixI18n.label( I18N, 'signup.one_verified' );
         }
         let five = pwixI18n.label( I18N, 'signup.text_five' );
-        if( SAA._conf.requireVerifiedEmail ){
+        if( SAA.configure().requireVerifiedEmail ){
             five += pwixI18n.label( I18N, 'signup.five_verified' );
         }
         return {

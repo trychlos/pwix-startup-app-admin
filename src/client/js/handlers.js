@@ -9,12 +9,12 @@ import { pwixI18n } from 'meteor/pwix:i18n';
 import { Tracker } from 'meteor/tracker';
 
 async function setAdminPrivileges( email ){
-    if( SAA._conf.verbosity & SAA.C.Verbose.HANDLERS ){
+    if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
         console.log( 'pwix:startup-app-admin setAdminPrivileges', email );
     }
-    return Meteor.callAsync( 'Roles.createRole', SAA._conf.adminRole, { unlessExists: true })
+    return Meteor.callAsync( 'Roles.createRole', SAA.configure().adminRole, { unlessExists: true })
         .then(() => { return Meteor.callAsync( 'AccountsUI.byEmailAddress', email ); })
-        .then(( user ) => { return user ? Meteor.callAsync( 'Roles.addUsersToRoles', user._id, SAA._conf.adminRole ) : null; })
+        .then(( user ) => { return user ? Meteor.callAsync( 'Roles.addUsersToRoles', user._id, SAA.configure().adminRole ) : null; })
         .catch(( err ) => {
             console.error( err );
         });
@@ -30,7 +30,7 @@ function onEmailVerified( event, data ){
     //console.debug( 'onEmailVerified', arguments );
     //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
     //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
-    if( SAA._conf.requireVerifiedEmail && SAA.waitForEmailVerification()){
+    if( SAA.configure().requireVerifiedEmail && SAA.waitForEmailVerification()){
         // make sure we do not have got another admin in the meantime
         //  note: race condition here between coutAdmins() and setAdminPrivileges()
         if( SAA.countAdmins.get() > 0 ){
@@ -51,14 +51,19 @@ function onEmailVerified( event, data ){
         "emails": [
             {
                 "address": "goldorak@innocent.com",
-                "verified": false
+                "verified": false,
+                "id": "GiBGAy6FHvGhRwJqA"
             }
         ],
-        "options": {
+        "createUserOptions": {
             "email": "goldorak@innocent.com"
         },
-        "autoClose": true,
-        "autoConnect": true
+        "opts": {
+            "options": {
+                "acCompanionOptions": { ... }
+                "target": { ... }
+            }
+        }
     }
  */
 
@@ -68,10 +73,11 @@ function _bootbox_ack(){
 }
 
 function onUserCreated( event, data ){
+    // console.debug( 'onUserCreated', data );
     if( SAA.countAdmins.get() === 0 ){
 
         // reminder that the email needs to be verified
-        if( SAA._conf.requireVerifiedEmail ){
+        if( SAA.configure().requireVerifiedEmail ){
             Bootbox.alert({
                 title: pwixI18n.label( I18N, 'confirm.title' ),
                 message: pwixI18n.label( I18N, 'confirm.required' ),
@@ -83,13 +89,13 @@ function onUserCreated( event, data ){
 
         // or just go to the application
         } else {
-            setAdminPrivileges( data.options.email );
+            setAdminPrivileges( data.createUserOptions.email );
             FlowRouter.go( '/' );
         }
     }
 }
 
-if( SAA._conf.verbosity & SAA.C.Verbose.HANDLERS ){
+if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
     console.log( 'pwix:startup-app-admin installing event listeners' );
 }
 $( document ).on( 'ac-user-created-event.pwixStartupAppAdmin', onUserCreated );
@@ -97,7 +103,7 @@ $( document ).on( 'ac-user-verifieddone-event.pwixStartupAppAdmin', onEmailVerif
 
 Tracker.autorun(() => {
     if( SAA.countAdmins.get() > 0 ){
-        if( SAA._conf.verbosity & SAA.C.Verbose.HANDLERS ){
+        if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
             console.log( 'pwix:startup-app-admin removing event listeners' );
         }
         $( document ).off( '.pwixStartupAppAdmin' );
