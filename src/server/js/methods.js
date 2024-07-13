@@ -14,11 +14,11 @@ Meteor.methods({
             Accounts.emailTemplates.from = SAA._conf.email.from || SAA._defaults.email.from;
         }
         let template = {};
-        template.subject = SAA._conf.email.subject || SAA._defaults.email.subject;
-        template.text = SAA._conf.email.text || function( user, url ){
+        template.subject = SAA.configure().email.subject;
+        template.text = SAA.configure().email.text || function( user, url ){
             return pwixI18n.label( I18N, 'email.text', url );
         };
-        template.html = SAA._conf.email.text || function( user, url ){
+        template.html = SAA.configure().email.text || function( user, url ){
             return pwixI18n.label( I18N, 'email.html', url );
         };
         Accounts.emailTemplates.verifyEmail = template;

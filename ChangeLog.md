@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Fix methods to get reactive configuration
 
 ### 1.4.4
 
