@@ -8,6 +8,7 @@
 
     - Fix code to use new reactive configuration
     - Improve display
+    - Fix the count admins when the user is not allowed to count this role
 
 ### 1.4.4
 

@@ -32,13 +32,17 @@ Tracker.autorun(() => {
     _ready.handle = Meteor.subscribe( 'pwix_roles_count_by_roles', role );
 });
 
+// will not receive anything if the user is not connected and there is already an app admin
 Tracker.autorun(() => {
     if( _ready.handle.ready()){
         const role = SAA.configure().adminRole;
-        const count = _Counts.find({ role: role }).fetch()[0].count;
-        SAA.countAdmins.set( count );
-        _ready.val = true;
-        _ready.dep.changed();
+        const found =  _Counts.find({ role: role }).fetch();
+        if( found.length ){
+            const count = found[0].count;
+            SAA.countAdmins.set( count );
+            _ready.val = true;
+            _ready.dep.changed();
+        }
     }
 });
 
