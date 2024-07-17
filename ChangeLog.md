@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.5-rc
+### 1.4.5
 
-    Release date: 
+    Release date: 2024- 7-17
 
     - Fix code to use new reactive configuration
     - Improve display
@@ -96,4 +96,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 10th
+- Last updated on 2024, Jul. 17th
