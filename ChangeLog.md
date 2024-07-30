@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Improve (I hope) labels
 
 ### 1.4.5
 

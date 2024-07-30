@@ -38,7 +38,7 @@ SAA.i18n = {
                 text_one: ''
                     +'<p class="">Hi,</p>'
                     +'<p class="">This is the first startup of your application. Thank you for your trust.</p>'
-                    +'<p class="">It is now time to define its first, most-privileged, administrator.</p>',
+                    +'<p class="">It is now time to define its first, most-privileged, user account.</p>',
                 one_verified: ''
                     +'<p>You will get administration privileges as soon as your email address will have been verified.</p>',
                 text_five: ''
