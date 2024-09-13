@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.4.6-rc
+### 1.4.6
 
-    Release date: 
+    Release date: 2024- 9-13
 
     - Improve (I hope) labels
 
@@ -102,4 +102,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 17th
+- Last updated on 2024, Sep. 13th
