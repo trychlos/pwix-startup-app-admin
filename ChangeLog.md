@@ -2,11 +2,11 @@
 
 ## ChangeLog
 
-### 1.4.7-rc
+### 1.5.0-rc
 
     Release date: 
 
-    - 
+    - Upgrade pwix:accounts-ui accepted version up to v 2.0.0-rc, thus bumping minor candidate version number
 
 ### 1.4.6
 
