@@ -29,7 +29,7 @@ const _defaults = {
  */
 SAA.configure = function( o ){
     if( o && _.isObject( o )){
-        _.merge( _conf, _defaults, o );
+        _conf = _.merge( _defaults, _conf, o );
         SAA._conf.set( _conf );
         // be verbose if asked for
         if( _conf.verbosity & SAA.C.Verbose.CONFIGURE ){
@@ -41,5 +41,5 @@ SAA.configure = function( o ){
     return SAA._conf.get();
 };
 
-_.merge( _conf, _defaults );
+_conf = _.merge( {}, _defaults );
 SAA._conf = new ReactiveVar( _conf );

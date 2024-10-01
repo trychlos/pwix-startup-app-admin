@@ -7,6 +7,7 @@
     Release date: 
 
     - Upgrade pwix:accounts-ui accepted version up to v 2.0.0-rc, thus bumping minor candidate version number
+    - Fix configuration overrides
 
 ### 1.4.6
 
