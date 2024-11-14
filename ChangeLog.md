@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Add (missing) pwix:accounts-hub requirement
 
 ### 1.5.0
 

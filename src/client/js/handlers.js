@@ -2,7 +2,6 @@
  * pwix:startup-app-admin/src/client/js/handlers.js
  */
 
-import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { Bootbox } from 'meteor/pwix:bootbox';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { pwixI18n } from 'meteor/pwix:i18n';
@@ -13,7 +12,7 @@ async function setAdminPrivileges( email ){
         console.log( 'pwix:startup-app-admin setAdminPrivileges', email );
     }
     return Meteor.callAsync( 'Roles.createRole', SAA.configure().adminRole, { unlessExists: true })
-        .then(() => { return Meteor.callAsync( 'AccountsUI.byEmailAddress', email ); })
+        .then(() => { return Meteor.callAsync( 'AccountsHub.byEmailAddress', 'users', email ); })
         .then(( user ) => { return user ? Meteor.callAsync( 'Roles.addUsersToRoles', user._id, SAA.configure().adminRole ) : null; })
         .catch(( err ) => {
             console.error( err );
