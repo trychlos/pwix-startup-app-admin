@@ -200,4 +200,4 @@ Under the hood, `pwix:startup-app-admin` makes use of the `localStorage` facilit
 
 ---
 P. Wieser
-- Last updated on 2024, Oct. 4th
+- Last updated on 2024, Nov. 19th
