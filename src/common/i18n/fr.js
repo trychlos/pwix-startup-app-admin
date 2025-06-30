@@ -40,7 +40,8 @@ SAA.i18n = {
                     +'<p class="">C\'est le premier lancement de votre application. Merci de votre confiance.</p>'
                     +'<p class="">Il est dès maintenant temps de définir son premier, le plus privilégié, compte utilisateur.</p>',
                 one_verified: ''
-                    +'<p>Les privilèges d\'administration vous seront attribués dès que votre adresse de messagerie aura été vérifiée.</p>',
+                    +'<p>Les privilèges d\'administration vous seront attribués dès que votre adresse de messagerie aura été vérifiée.</p>'
+                    +'<p>&nbsp;</p>',
                 text_five: ''
                     +'<p class="">Et voilà !</p>',
                 five_verified: ''

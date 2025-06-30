@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Add a blank line before creation fields
 
 ### 1.5.1
 
