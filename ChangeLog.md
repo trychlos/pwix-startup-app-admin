@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.2-rc
+### 1.5.2
 
-    Release date: 
+    Release date: 2025- 7- 8
 
     - Add a blank line before creation fields
 
@@ -121,4 +121,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Nov. 19th
+- Last updated on 2025, Jul. 8th
