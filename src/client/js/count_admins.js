@@ -52,3 +52,7 @@ Tracker.autorun(() => {
         console.log( 'pwix:startup-app-admin countAdmins', count );
     }
 });
+
+Tracker.autorun(() => {
+    console.debug( 'pwix:startup-app-admin ready()', SAA.ready());
+});

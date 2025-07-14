@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Track the ready() status of the package
 
 ### 1.5.2
 
