@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.5.3-rc
+### 1.5.3
 
-    Release date: 
+    Release date: 2026- 2-10
 
     - Track the ready() status of the package
 
@@ -127,4 +127,4 @@
 
 ---
 P. Wieser
-- Last updated on 2025, Jul. 8th
+- Last updated on 2026, Feb. 10th
