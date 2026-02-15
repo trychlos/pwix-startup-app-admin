@@ -4,11 +4,16 @@
 
 A Meteor package (Blaze-based) template which, once added to the application, let it start by creating a global Application Administrator account.
 
+## Installation
+
+This Meteor package is installable with the usual command:
+
+```sh
+    meteor add pwix:startup-app-admin
+    meteor npm install lodash --save
+```
+
 ## Usage
-
-### Install the package
-
-`meteor add pwix:startup-app-admin`
 
 ### Layout integration
 
@@ -49,64 +54,22 @@ A Meteor package (Blaze-based) template which, once added to the application, le
         shouldDisplayContent(){
             const hasPackage = Object.keys( Package ).includes( 'pwix:startup-app-admin' );
             const hasAdmin = hasPackage ? Package['pwix:startup-app-admin'].SAA.countAdmins.get() > 0 : false;
-            return hasPackage && !hasAdmin;
+            return !hasPackage || hasAdmin;
         }
     });
 ```
 
-## Configuration
+##  What does it provide ?
 
-The package's behavior can be configured through a call to the `SAA.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
+### `SAA`
 
-Known configuration options are:
+The exported `SAA` global object provides following items:
 
-- `adminRole`
-
-    Define the name of the role of the application adminitrator.
-
-    Defaults to [`SAA.C.Admin.ROLE`](#constants) constant.
-
-- `requireVerifiedEmail`
-
-    Whether the newly created user must provide a verifiable email, and make it verified, in order to get the Administrator privilege.
-
-    This means that the initial login page will stay stuck until the mail is verified.
-
-    Defaults to `true`.
-
-- `verbosity`
-
-    Define the expected verbosity level.
-
-    The accepted value can be any or-ed combination of following:
-
-    - `SAA.C.Verbose.NONE`
-
-        Do not display any trace log to the console
-
-    - `SAA.C.Verbose.CONFIGURE`
-
-        Trace `SAA.configure()` calls and their result
-
-    - `SAA.C.Verbose.COUNTS`
-
-        Trace the changes of `countAdmins` ReactiveVar.
-
-Please note that `SAA.configure()` method should be called in the same terms both in client and server sides.
-
-Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `SAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
-
-`SAA.configure()` is a reactive data source.
-
-## `SAA`
-
-The globally exported object.
-
-### Methods
+### Functions
 
 - `SAA.i18n.namespace()`
 
-    This method returns the `pwix:i18n` namespace of the `pwix:startu-app-admin` package.
+    This method returns the `pwix:i18n` namespace of the `pwix:startup-app-admin` package.
 
     With that name, anyone is so able to provide additional translations.
 
@@ -134,15 +97,111 @@ The globally exported object.
 
     Also accepts an `image` url to be displayed besides of the form.
 
-### Constants
+- `saaIsReady`
 
-- `SAA.C.Admin.ROLE`
+    A globally registered Blaze helper which returns the value of `SAA.ready()`.
 
-    The name of the application admin role.
+## Configuration
 
-    Value is 'APP_ADMINISTRATOR'.
+The package's behavior can be configured through a call to the `SAA.configure()` method, with just a single javascript object argument, which itself should only contains the options you want override.
 
-### Maintainer notes
+Known configuration options are:
+
+- `adminRole`
+
+    Define the name of the role of the application adminitrator.
+
+    Defaults to `SAA.C.Admin.ROLE` constant.
+
+- `email`
+
+    A way to personalize the email sent to verify the futur administratoir identity.
+
+    This is an object with following values:
+
+    - `from`: the sender, defaulting to `SAA <no-reply@trychlos.org>`
+
+    - `subject`: a function which is expected to return the subject of the email, defaulting to `Email address verification of the first application administrator`
+
+    - `text`: a localized string to be used as a fallback when user doesn't want display HTML emails.
+
+        The `en` default is:
+
+            Hello,
+            
+            In order to get your email verified, and so gain your administrator privileges, please just clic on the below link:
+            
+            <link>
+            
+            Thank you for your trust.
+            
+            Sent from pwix:startup-app-admin
+
+        The `fr` equivalent is:
+
+            Bonjour,
+
+            Afin de valider votre adresse email, et ainsi obtenir vos privilèges d'administration, il vous suffit de cliquer sur le lien ci-dessous:
+
+            <link>
+            
+            Merci de votre confiance.
+            
+            Envoyé par pwix:startup-app-admin
+
+    - `html`: a localized HTML string which be the body of the email.
+
+- `requireVerifiedEmail`
+
+    Whether the newly created user must provide a verifiable email, and make it verified, in order to get the Administrator privilege.
+
+    This means that the initial login page will stay stuck until the mail is verified.
+
+    Defaults to `true`.
+
+- `verbosity`
+
+    Define the expected verbosity level.
+
+    The accepted value can be any or-ed combination of following:
+
+    - `SAA.C.Verbose.NONE`
+
+        Do not display any trace log to the console.
+
+    - `SAA.C.Verbose.CONFIGURE`
+
+        Trace `SAA.configure()` calls and their result.
+
+    - `SAA.C.Verbose.COUNTS`
+
+        Trace the changes of `countAdmins` ReactiveVar.
+
+    - `SAA.C.Verbose.HANDLERS`
+
+        Trace the execution of the handlers:
+        - when installing and removing event listeners
+        - when actually setting the administration role to the user.
+
+    - `SAA.C.Verbose.HIDECOMP`
+
+        Trace when the waiting panel is hidden or displayed.
+
+    - `SAA.C.Verbose.WAITING`
+
+        Trace when we are starting to wait for the email verification.
+
+    - `SAA.C.Verbose.STATUS`
+
+        Trace the status of the package.
+
+Please note that `SAA.configure()` method should be called in the same terms both in client and server sides.
+
+Remind too that Meteor packages are instanciated at application level. They are so only configurable once, or, in other words, only one instance has to be or can be configured. Addtionnal calls to `SAA.configure()` will just override the previous one. You have been warned: **only the application should configure a package**.
+
+`SAA.configure()` is a reactive data source.
+
+## Maintainer notes
 
 `pwix:startup-app-admin` package implements a workflow:
 
@@ -177,12 +236,14 @@ Starting with v 1.1.0, and in accordance with advices from [the Meteor Guide](ht
 Instead we check npm versions of installed packages at runtime, on server startup, in development environment.
 
 Dependencies as of v 1.5.0:
-```
+
+```js
     'lodash': '^4.17.0'
 ```
 
 Each of these dependencies should be installed at application level:
-```
+
+```sh
     meteor npm install <package> --save
 ```
 

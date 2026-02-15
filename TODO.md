@@ -12,7 +12,7 @@
 | ---: | :---       | :---                       |
 |   18 | 2023- 7- 5 | be verbose for saveOnce/restore |
 |   23 | 2023- 7- 5 | after having acknowledged the congrat dialog, the SAA template should disappear (without reload the page) |
-|   31 | 2024- 6- 2 |  |
+|   31 |  |  |
 
 ---
 ## Done

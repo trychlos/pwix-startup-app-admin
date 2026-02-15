@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Improve documentation
 
 ### 1.5.3
 
