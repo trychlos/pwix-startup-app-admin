@@ -7,6 +7,7 @@
     Release date: 
 
     - Improve documentation
+    - Improve configure() to detect unmanaged keys
 
 ### 1.5.3
 

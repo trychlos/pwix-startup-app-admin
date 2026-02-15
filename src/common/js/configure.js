@@ -7,8 +7,9 @@ import _ from 'lodash';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 let _conf = {};
+SAA._conf = new ReactiveVar( _conf );
 
-const _defaults = {
+SAA._defaults = {
     adminRole: SAA.C.Admin.ROLE,
     email: {
         from: 'SAA <no-reply@trychlos.org>',
@@ -29,17 +30,28 @@ const _defaults = {
  */
 SAA.configure = function( o ){
     if( o && _.isObject( o )){
-        _conf = _.merge( _defaults, _conf, o );
-        SAA._conf.set( _conf );
-        // be verbose if asked for
-        if( _conf.verbosity & SAA.C.Verbose.CONFIGURE ){
-            //console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
-            console.debug( 'pwix:startup-app-admin configure() with', o );
+        // check that keys exist
+        let built_conf = {};
+        Object.keys( o ).forEach(( it ) => {
+            if( Object.keys( SAA._defaults ).includes( it )){
+                built_conf[it] = o[it];
+            } else {
+                console.warn( 'pwix:startup-app-admin configure() ignore unmanaged key \''+it+'\'' );
+            }
+        });
+        if( Object.keys( built_conf ).length ){
+            _conf = _.merge( SAA._defaults, _conf, built_conf );
+            SAA._conf.set( _conf );
+            // be verbose if asked for
+            if( _conf.verbosity & SAA.C.Verbose.CONFIGURE ){
+                //console.debug( 'pwix:startup-app-admin configure() with', o, 'building', SAA._conf );
+                console.debug( 'pwix:startup-app-admin configure() with', built_conf );
+            }
         }
     }
     // also acts as a getter
     return SAA._conf.get();
 };
 
-_conf = _.merge( {}, _defaults );
-SAA._conf = new ReactiveVar( _conf );
+_conf = _.merge( {}, SAA._defaults );
+SAA._conf.set( _conf );
