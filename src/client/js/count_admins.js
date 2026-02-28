@@ -2,9 +2,12 @@
  * pwix:startup-app-admin/src/client/js/count_admins.js
  */
 
+import { Logger } from 'meteor/pwix:logger';
 import { Mongo } from 'meteor/mongo';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Tracker } from 'meteor/tracker';
+
+const logger = Logger.get();
 
 /**
  * @summary A ReactiveVar which handles the count of app admins
@@ -48,11 +51,9 @@ Tracker.autorun(() => {
 
 Tracker.autorun(() => {
     const count = SAA.countAdmins.get();
-    if( SAA.configure().verbosity & SAA.C.Verbose.COUNTS ){
-        console.log( 'pwix:startup-app-admin countAdmins', count );
-    }
+    logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.COUNTS }, 'countAdmins', count );
 });
 
 Tracker.autorun(() => {
-    console.debug( 'pwix:startup-app-admin ready()', SAA.ready());
+    logger.debug( 'ready()', SAA.ready());
 });

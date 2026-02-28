@@ -7,14 +7,15 @@
  * - though each time a new user is created, the panel is one more time hidden to the benefit of the waiting message
  */
 
+import { Logger } from 'meteor/pwix:logger';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Tracker } from 'meteor/tracker';
+
+const logger = Logger.get();
 
 SAA._hideComponent = new ReactiveVar( localStorage.getItem( WAIT_FOR_VERIFICATION ) || false );
 
 Tracker.autorun(() => {
     const hide = SAA._hideComponent.get();
-    if( SAA.configure().verbosity & SAA.C.Verbose.HIDECOMP ){
-        console.log( 'pwix:startup-app-admin hideComponent', hide );
-    }
+    logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.HIDECOMP }, 'hideComponent', hide );
 });

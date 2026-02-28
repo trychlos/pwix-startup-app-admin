@@ -2,12 +2,13 @@
 
 ## ChangeLog
 
-### 1.5.4-rc.0
+### 1.6.0-rc.0
 
     Release date: 
 
     - Improve documentation
     - Improve configure() to detect unmanaged keys
+    - Use pwix:logger universal logger, thus bumping minor candidate version number
 
 ### 1.5.3
 

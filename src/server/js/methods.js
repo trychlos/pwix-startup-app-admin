@@ -3,13 +3,16 @@
  */
 
 import { Accounts } from 'meteor/accounts-base';
+import { Logger } from 'meteor/pwix:logger';
 import { pwixI18n } from 'meteor/pwix:i18n';
+
+const logger = Logger.get();
 
 Meteor.methods({
     // this is called from saaCreate.onRendered() template function
     // at that time we are reasonably sure that we will have to create an app administrator and so to send him a verification link
     async 'SAA.setEmailTemplate'(){
-        //console.debug( 'initial Accounts.emailTemplates', Accounts.emailTemplates );
+        //logger.debug( 'initial Accounts.emailTemplates', Accounts.emailTemplates );
         if( Accounts.emailTemplates.from.match( /example\.com/ )){
             Accounts.emailTemplates.from = SAA.configure().email.from;
         }
@@ -22,6 +25,6 @@ Meteor.methods({
             return pwixI18n.label( I18N, 'email.html', url );
         };
         Accounts.emailTemplates.verifyEmail = template;
-        //console.debug( 'set verifyEmail template', template );
+        //logger.debug( 'set verifyEmail template', template );
     },
 });

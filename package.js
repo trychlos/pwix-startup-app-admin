@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:startup-app-admin',
-    version: '1.5.4-rc.0',
+    version: '1.6.0-rc.0',
     summary: 'Force the application to start by creating an administrator',
     git: 'https://github.com/trychlos/pwix-startup-app-admin',
     documentation: 'README.md'
@@ -31,6 +31,7 @@ function configure( api ){
     api.use( 'pwix:accounts-hub@1.0.0' );
     api.use( 'pwix:accounts-ui@1.5.0 || 2.0.0-rc' );
     api.use( 'pwix:bootbox@1.5.5' );
+    api.use( 'pwix:logger@1.0.0-rc' );
     api.use( 'pwix:modal@1.10.0 || 2.0.0' );
     api.use( 'pwix:roles@1.3.0' );
     api.use( 'pwix:ui-layout@2.0.0' );

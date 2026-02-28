@@ -4,7 +4,10 @@
  * A reactive data source which is true when waiting for a user to have a validated email
  */
 
+import { Logger } from 'meteor/pwix:logger';
 import { Tracker } from 'meteor/tracker';
+
+const logger = Logger.get();
 
 _wait = {
     dep: new Tracker.Dependency(),
@@ -36,7 +39,5 @@ SAA.waitForEmailVerification = function( flag ){
 
 Tracker.autorun(() => {
     const wait = SAA.waitForEmailVerification();
-    if( SAA.configure().verbosity & SAA.C.Verbose.WAITING ){
-        console.log( 'pwix:startup-app-admin waitForEmailVerification', wait );
-    }
+    logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.WAITING }, 'waitForEmailVerification', wait );
 });

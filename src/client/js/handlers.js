@@ -4,18 +4,21 @@
 
 import { Bootbox } from 'meteor/pwix:bootbox';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Logger } from 'meteor/pwix:logger';
 import { pwixI18n } from 'meteor/pwix:i18n';
 import { Tracker } from 'meteor/tracker';
 
+const logger = Logger.get();
+
 async function setAdminPrivileges( email ){
     if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
-        console.log( 'pwix:startup-app-admin setAdminPrivileges', email );
+        logger.log( 'setAdminPrivileges()', email );
     }
     return Meteor.callAsync( 'Roles.createRole', SAA.configure().adminRole, { unlessExists: true })
         .then(() => { return Meteor.callAsync( 'AccountsHub.byEmailAddress', 'users', email ); })
         .then(( user ) => { return user ? Meteor.callAsync( 'Roles.addUsersToRoles', user._id, SAA.configure().adminRole ) : null; })
         .catch(( err ) => {
-            console.error( err );
+            logger.error( err );
         });
 }
 
@@ -26,9 +29,9 @@ async function setAdminPrivileges( email ){
     }
  */
 function onEmailVerified( event, data ){
-    //console.debug( 'onEmailVerified', arguments );
-    //console.debug( AccountsUI.opts().onVerifiedEmailTitle());
-    //console.debug( AccountsUI.opts().onVerifiedEmailMessage());
+    //logger.debug( 'onEmailVerified', arguments );
+    //logger.debug( AccountsUI.opts().onVerifiedEmailTitle());
+    //logger.debug( AccountsUI.opts().onVerifiedEmailMessage());
     if( SAA.configure().requireVerifiedEmail && SAA.waitForEmailVerification()){
         // make sure we do not have got another admin in the meantime
         //  note: race condition here between coutAdmins() and setAdminPrivileges()
@@ -72,7 +75,7 @@ function _bootbox_ack(){
 }
 
 function onUserCreated( event, data ){
-    // console.debug( 'onUserCreated', data );
+    // logger.debug( 'onUserCreated', data );
     if( SAA.countAdmins.get() === 0 ){
 
         // reminder that the email needs to be verified
@@ -94,17 +97,13 @@ function onUserCreated( event, data ){
     }
 }
 
-if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
-    console.log( 'pwix:startup-app-admin installing event listeners' );
-}
+logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.HANDLERS }, 'installing event listeners' );
 $( document ).on( 'ac-user-created-event.pwixStartupAppAdmin', onUserCreated );
 $( document ).on( 'ac-user-verifieddone-event.pwixStartupAppAdmin', onEmailVerified );
 
 Tracker.autorun(() => {
     if( SAA.countAdmins.get() > 0 ){
-        if( SAA.configure().verbosity & SAA.C.Verbose.HANDLERS ){
-            console.log( 'pwix:startup-app-admin removing event listeners' );
-        }
+        logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.HANDLERS }, 'removing event listeners' );
         $( document ).off( '.pwixStartupAppAdmin' );
     }
 });

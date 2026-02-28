@@ -7,7 +7,10 @@
 
 import { AccountsUI } from 'meteor/pwix:accounts-ui';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { Logger } from 'meteor/pwix:logger';
 import { Tracker } from 'meteor/tracker';
+
+const logger = Logger.get();
 
 const _parms = [
     'onEmailVerifiedBeforeFn',
@@ -43,9 +46,7 @@ SAA._setOptions = function(){
 
 // wait for the package configuration be done
 Meteor.startup(() => {
-    if( SAA.configure().verbosity & SAA.C.Verbose.STATUS ){
-        console.log( 'pwix:startup-app-admin SAA.configure().requireVerifiedEmail', SAA.configure().requireVerifiedEmail, 'countAdmins', SAA.countAdmins.get());
-    }
+    logger.verbose({ verbosity: SAA.configure().verbosity, against: SAA.C.Verbose.STATUS }, 'requireVerifiedEmail', SAA.configure().requireVerifiedEmail, 'countAdmins', SAA.countAdmins.get());
     if( SAA.configure().requireVerifiedEmail && SAA.countAdmins.get() === 0 ){
         SAA._setOptions();
     }
