@@ -9,6 +9,7 @@
     - Improve documentation
     - Improve configure() to detect unmanaged keys
     - Use pwix:logger universal logger, thus bumping minor candidate version number
+    - Make sure methods and publications are prefixed with a full namespace
 
 ### 1.5.3
 

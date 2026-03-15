@@ -9,7 +9,7 @@ import './saaCreate.html';
 import './saaCreate.less';
 
 Template.saaCreate.onRendered( function(){
-    Meteor.callAsync( 'SAA.setEmailTemplate' );
+    Meteor.callAsync( 'pwix.SAA.m.setEmailTemplate' );
 });
 
 Template.saaCreate.helpers({

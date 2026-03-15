@@ -32,7 +32,7 @@ SAA.ready = function(){
 
 Tracker.autorun(() => {
     const role = SAA.configure().adminRole;
-    _ready.handle = Meteor.subscribe( 'pwix_roles_count_by_roles', role );
+    _ready.handle = Meteor.subscribe( 'pwix.Roles.p.countByRoles', role );
 });
 
 // will not receive anything if the user is not connected and there is already an app admin

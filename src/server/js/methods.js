@@ -11,7 +11,7 @@ const logger = Logger.get();
 Meteor.methods({
     // this is called from saaCreate.onRendered() template function
     // at that time we are reasonably sure that we will have to create an app administrator and so to send him a verification link
-    async 'SAA.setEmailTemplate'(){
+    async 'pwix.SAA.m.setEmailTemplate'(){
         //logger.debug( 'initial Accounts.emailTemplates', Accounts.emailTemplates );
         if( Accounts.emailTemplates.from.match( /example\.com/ )){
             Accounts.emailTemplates.from = SAA.configure().email.from;
