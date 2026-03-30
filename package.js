@@ -28,7 +28,7 @@ function configure( api ){
     api.use( 'blaze-html-templates@2.0.0 || 3.0.0-alpha300.0', 'client' );
     api.use( 'ecmascript' );
     api.use( 'less@4.0.0', 'client' );
-    api.use( 'pwix:accounts-hub@1.0.0' );
+    api.use( 'pwix:accounts-core@1.0.0 || 2.0.0-rc.0' );
     api.use( 'pwix:accounts-ui@1.5.0 || 2.0.0-rc' );
     api.use( 'pwix:bootbox@1.5.5' );
     api.use( 'pwix:logger@1.0.0-rc' );
@@ -37,7 +37,7 @@ function configure( api ){
     api.use( 'pwix:ui-layout@2.0.0' );
     api.use( 'pwix:ui-utils@1.0.0' );
     api.use( 'reactive-var' );
-    api.use( 'tmeasday:check-npm-versions@1.0.2 || 2.0.0-beta.0', 'server' );
+    api.use( 'tmeasday:check-npm-versions@2.1.0', 'server' );
     api.addFiles( 'src/client/components/saaCreate/saaCreate.js', 'client' );
 }
 

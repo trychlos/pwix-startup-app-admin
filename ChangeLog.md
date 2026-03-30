@@ -10,6 +10,8 @@
     - Improve configure() to detect unmanaged keys
     - Use pwix:logger universal logger, thus bumping minor candidate version number
     - Make sure methods and publications are prefixed with a full namespace
+    - Upgrade tmeasday:check-npm-versions to 2.1.0
+    - Rename pwix:accounts-hub dependency to pwix:accounts-core, upgrading it to 2.0.0-rc.0
 
 ### 1.5.3
 
@@ -27,7 +29,7 @@
 
     Release date: 2024-11-19
 
-    - Add (missing) pwix:accounts-hub requirement
+    - Add (missing) pwix:accounts-core requirement
 
 ### 1.5.0
 

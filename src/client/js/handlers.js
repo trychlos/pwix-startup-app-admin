@@ -15,7 +15,7 @@ async function setAdminPrivileges( email ){
         logger.log( 'setAdminPrivileges()', email );
     }
     return Meteor.callAsync( 'pwix.Roles.m.createRole', SAA.configure().adminRole, { unlessExists: true })
-        .then(() => { return Meteor.callAsync( 'pwix.AccountsHub.m.byEmailAddress', 'users', email ); })
+        .then(() => { return Meteor.callAsync( 'pwix.AccountsCore.m.byEmailAddress', 'users', email ); })
         .then(( user ) => { return user ? Meteor.callAsync( 'pwix.Roles.m.addUsersToRoles', user._id, SAA.configure().adminRole ) : null; })
         .catch(( err ) => {
             logger.error( err );
