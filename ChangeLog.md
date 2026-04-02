@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.6.0-rc.0
+### 1.6.0
 
-    Release date: 
+    Release date: 2026- 4- 2
 
     - Improve documentation
     - Improve configure() to detect unmanaged keys
@@ -138,4 +138,4 @@
 
 ---
 P. Wieser
-- Last updated on 2026, Feb. 10th
+- Last updated on 2026, Apr. 2nd
